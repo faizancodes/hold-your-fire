@@ -1,0 +1,137 @@
+% =====================================================================
+% LocalGuard references.
+% These are well-established papers positioned by area. Keys/years/venues
+% should be re-verified against the canonical record before submission,
+% and recent agent-monitoring work (e.g. PrefixGuard / online failure
+% monitors / the Intervention-Paradox line) added once located. No entry
+% here is fabricated as a load-bearing claim.
+% =====================================================================
+
+% --- Coding agents and benchmarks ---
+@inproceedings{jimenez2024swebench,
+  title     = {{SWE-bench}: Can Language Models Resolve Real-World {GitHub} Issues?},
+  author    = {Jimenez, Carlos E. and Yang, John and Wettig, Alexander and
+               Yao, Shunyu and Pei, Kexin and Press, Ofir and Narasimhan, Karthik},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024},
+  note      = {arXiv:2310.06770}
+}
+
+@inproceedings{yang2024sweagent,
+  title     = {{SWE-agent}: Agent-Computer Interfaces Enable Automated Software Engineering},
+  author    = {Yang, John and Jimenez, Carlos E. and Wettig, Alexander and
+               Lieret, Kilian and Yao, Shunyu and Narasimhan, Karthik and Press, Ofir},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2024},
+  note      = {arXiv:2405.15793}
+}
+
+@article{wang2024openhands,
+  title   = {{OpenHands}: An Open Platform for {AI} Software Developers as Generalist Agents},
+  author  = {Wang, Xingyao and Li, Boxuan and Song, Yufan and Xu, Frank F. and
+             Tang, Xiangru and Zhuge, Mingchen and others},
+  journal = {arXiv preprint arXiv:2407.16741},
+  year    = {2024}
+}
+
+% --- Process supervision / step verification ---
+@article{lightman2023verify,
+  title   = {Let's Verify Step by Step},
+  author  = {Lightman, Hunter and Kosaraju, Vineet and Burda, Yura and
+             Edwards, Harri and Baker, Bowen and Lee, Teddy and Leike, Jan and
+             Schulman, John and Sutskever, Ilya and Cobbe, Karl},
+  journal = {arXiv preprint arXiv:2305.20050},
+  year    = {2023}
+}
+
+% --- Selective prediction / reject option / learning to defer ---
+@article{chow1970reject,
+  title   = {On Optimum Recognition Error and Reject Tradeoff},
+  author  = {Chow, C. K.},
+  journal = {IEEE Transactions on Information Theory},
+  volume  = {16},
+  number  = {1},
+  pages   = {41--46},
+  year    = {1970}
+}
+
+@article{elyaniv2010foundations,
+  title   = {On the Foundations of Noise-free Selective Classification},
+  author  = {El-Yaniv, Ran and Wiener, Yair},
+  journal = {Journal of Machine Learning Research},
+  volume  = {11},
+  pages   = {1605--1641},
+  year    = {2010}
+}
+
+@inproceedings{geifman2017selectivenet,
+  title     = {Selective Classification for Deep Neural Networks},
+  author    = {Geifman, Yonatan and El-Yaniv, Ran},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2017},
+  note      = {See also SelectiveNet, ICML 2019 [verify]}
+}
+
+@inproceedings{madras2018predict,
+  title     = {Predict Responsibly: Improving Fairness and Accuracy by Learning to Defer},
+  author    = {Madras, David and Pitassi, Toniann and Zemel, Richard},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2018},
+  note      = {arXiv:1711.06664}
+}
+
+@inproceedings{mozannar2020consistent,
+  title     = {Consistent Estimators for Learning to Defer to an Expert},
+  author    = {Mozannar, Hussein and Sontag, David},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2020},
+  note      = {arXiv:2006.01862}
+}
+
+% --- Calibration ---
+@inproceedings{guo2017calibration,
+  title     = {On Calibration of Modern Neural Networks},
+  author    = {Guo, Chuan and Pleiss, Geoff and Sun, Yu and Weinberger, Kilian Q.},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2017},
+  note      = {arXiv:1706.04599}
+}
+
+@inproceedings{zadrozny2002transforming,
+  title     = {Transforming Classifier Scores into Accurate Multiclass Probability Estimates},
+  author    = {Zadrozny, Bianca and Elkan, Charles},
+  booktitle = {ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD)},
+  year      = {2002},
+  pages     = {694--699}
+}
+
+% --- Distribution shift / domain adaptation ---
+@article{shimodaira2000improving,
+  title   = {Improving Predictive Inference under Covariate Shift by Weighting the
+             Log-likelihood Function},
+  author  = {Shimodaira, Hidetoshi},
+  journal = {Journal of Statistical Planning and Inference},
+  volume  = {90},
+  number  = {2},
+  pages   = {227--244},
+  year    = {2000}
+}
+
+@inproceedings{sun2016return,
+  title     = {Return of Frustratingly Easy Domain Adaptation},
+  author    = {Sun, Baochen and Feng, Jiashi and Saenko, Kate},
+  booktitle = {AAAI Conference on Artificial Intelligence},
+  year      = {2016},
+  note      = {arXiv:1511.05547}
+}
+
+% --- LLM-as-a-judge ---
+@inproceedings{zheng2023judging,
+  title     = {Judging {LLM-as-a-Judge} with {MT-Bench} and {Chatbot Arena}},
+  author    = {Zheng, Lianmin and Chiang, Wei-Lin and Sheng, Ying and
+               Zhuang, Siyuan and Wu, Zhanghao and Zhuang, Yonghao and others},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS),
+               Datasets and Benchmarks Track},
+  year      = {2023},
+  note      = {arXiv:2306.05685}
+}

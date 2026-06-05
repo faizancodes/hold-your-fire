@@ -1,0 +1,82 @@
+{
+  "cross_model": {
+    "test_models": [
+      "swe-agent-llama-405b",
+      "swe-agent-llama-8b"
+    ],
+    "n_test_traj": 659,
+    "auc_within_70b": 0.7345,
+    "auc_cross_model": 0.6973,
+    "transfer_gap": 0.0372,
+    "ece_within": 0.0,
+    "ece_cross_naive": 0.0601,
+    "ece_cross_recalibrated": 0.0213
+  },
+  "cross_family_qwen": {
+    "n_runs": 25,
+    "n_success_runs": 14,
+    "n_prefixes": 310,
+    "monitor_auc_on_qwen": 0.6738,
+    "mean_risk_success_prefixes": 0.664,
+    "mean_risk_fail_prefixes": 0.759,
+    "success_above_bar_ungated": 0.314,
+    "success_above_bar_gated": 0.152
+  },
+  "second_source_openhands": {
+    "source": "openhands-coderforge-32b (CodeAct scaffold, qwen3-coder-32b)",
+    "dataset": "togethercomputer/CoderForge-Preview-32B-SWE-Bench-Verified-Evaluation-trajectories",
+    "n_trajectories": 500,
+    "n_instances": 500,
+    "n_prefixes": 8991,
+    "fail_rate": 0.454,
+    "within_nebius_auc": 0.722,
+    "zero_shot_auc_naive": 0.5251,
+    "zero_shot_auc_quantile_aligned": 0.5907,
+    "zero_shot_auc_aligned_ensemble": 0.6035,
+    "zero_shot_aligned_abstain": {
+      "step_ge_25": {
+        "auc": 0.6239,
+        "coverage": 0.56
+      },
+      "step_ge_35": {
+        "auc": 0.6308,
+        "coverage": 0.44
+      }
+    },
+    "zero_shot_ensemble_abstain": {
+      "step_ge_25": {
+        "auc": 0.6583,
+        "coverage": 0.56
+      },
+      "step_ge_35": {
+        "auc": 0.6638,
+        "coverage": 0.44
+      }
+    },
+    "in_domain_auc_5fold_cv": 0.5994,
+    "fewshot_auc_transferred_plus_indomain": 0.62,
+    "fewshot_abstain": {
+      "step_ge_25": {
+        "auc": 0.6758,
+        "coverage": 0.56
+      },
+      "step_ge_35": {
+        "auc": 0.684,
+        "coverage": 0.44
+      }
+    },
+    "posthoc_gate_auc_zero_shot": 0.7221,
+    "posthoc_gate_auc_fewshot": 0.7279,
+    "posthoc_note": "predict at the agent's final prefix (full trajectory) — a deployable patch-acceptance gate; ~Nebius parity",
+    "naive_transfer_gap": 0.1969,
+    "aligned_transfer_gap": 0.1313,
+    "zero_shot_auprc": 0.4928,
+    "ece_naive_nebius_calibrator": 0.2817,
+    "ece_recalibrated": 0.0192,
+    "mean_risk_success_prefixes": 0.718,
+    "ref_mean_risk_success_nebius": 0.45,
+    "deploy_threshold": 0.778,
+    "success_far_at_deploy_thr": 0.438,
+    "fail_coverage_at_deploy_thr": 0.47
+  }
+}

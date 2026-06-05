@@ -1,0 +1,59 @@
+{
+  "layer": 8,
+  "by_layer": {
+    "4": {
+      "cos_STUCK_REP": 0.04440104588866234,
+      "proj_on_STUCK": {
+        "loopfail": 0.0,
+        "vfail": 0.04603242874145508,
+        "loopprog": -1.288095235824585
+      },
+      "proj_on_REP": {
+        "loopfail": 0.0,
+        "vfail": -1.0367348194122314,
+        "loopprog": 0.05719327926635742
+      }
+    },
+    "8": {
+      "cos_STUCK_REP": 0.37091389298439026,
+      "proj_on_STUCK": {
+        "loopfail": 0.0,
+        "vfail": -0.7395282983779907,
+        "loopprog": -4.953600883483887
+      },
+      "proj_on_REP": {
+        "loopfail": 0.0,
+        "vfail": -1.9938009977340698,
+        "loopprog": -1.8373594284057617
+      }
+    },
+    "12": {
+      "cos_STUCK_REP": 0.6272164583206177,
+      "proj_on_STUCK": {
+        "loopfail": 0.0,
+        "vfail": -3.5087151527404785,
+        "loopprog": -8.69530963897705
+      },
+      "proj_on_REP": {
+        "loopfail": 0.0,
+        "vfail": -5.5941057205200195,
+        "loopprog": -5.453839302062988
+      }
+    },
+    "16": {
+      "cos_STUCK_REP": 0.48305410146713257,
+      "proj_on_STUCK": {
+        "loopfail": 0.0,
+        "vfail": -3.5696988105773926,
+        "loopprog": -14.420799255371094
+      },
+      "proj_on_REP": {
+        "loopfail": 0.0,
+        "vfail": -7.389856338500977,
+        "loopprog": -6.966026782989502
+      }
+    }
+  },
+  "REP_auc_obs_fixed": 1.0,
+  "STUCK_auc_cmd_fixed": 1.0
+}

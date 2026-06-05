@@ -1,0 +1,58 @@
+{
+  "baseline_test_auc": 0.7214,
+  "ensemble": {
+    "combiner": "weighted",
+    "auc_base": 0.7214,
+    "auc_new": 0.7244,
+    "delta": 0.003,
+    "delta_lo": -0.0006,
+    "delta_hi": 0.0066,
+    "frac_new_better": 0.95,
+    "significant": false,
+    "n_boot": 1000,
+    "auprc": 0.7943726269268151
+  },
+  "label_weighted": {
+    "scheme": "linear",
+    "auc_base": 0.7214,
+    "auc_new": 0.7158,
+    "delta": -0.0056,
+    "delta_lo": -0.0111,
+    "delta_hi": -0.0004,
+    "frac_new_better": 0.022,
+    "significant": false,
+    "n_boot": 1000
+  },
+  "label_position_strata": {
+    "early(<=0.33)": 0.6329,
+    "mid(0.33-0.66)": 0.7721,
+    "late(>0.66)": 0.8081
+  },
+  "seq_model_gru": {
+    "hidden": 64,
+    "epochs": 8,
+    "n_features": 19,
+    "auc_base": 0.7214,
+    "auc_new": 0.7163,
+    "delta": -0.0052,
+    "delta_lo": -0.0171,
+    "delta_hi": 0.0053,
+    "frac_new_better": 0.19,
+    "significant": false,
+    "n_boot": 1000
+  },
+  "more_data_K10": {
+    "enriched_train_traj": 24689,
+    "enriched_fail_traj": 20022,
+    "baseline_fail_traj": 4537,
+    "auc_base": 0.7214,
+    "auc_new": 0.7225,
+    "delta": 0.001,
+    "delta_lo": -0.0049,
+    "delta_hi": 0.0067,
+    "frac_new_better": 0.624,
+    "significant": false,
+    "n_boot": 1000,
+    "note": "≈4.4x more failure trajectories in train; K=25 confirmatory run not completed (purely diminishing-returns territory)"
+  }
+}

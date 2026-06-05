@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+
+% --- geometry / fonts ---
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% --- math / symbols ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% --- tables ---
+\usepackage{booktabs}
+\usepackage{array}
+
+% --- figures ---
+\usepackage{graphicx}
+\usepackage{float}
+\graphicspath{{../}{../results/figures/}}
+
+% --- color / links ---
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,%
+            urlcolor=blue!55!black,breaklinks=true]{hyperref}
+\usepackage{url}
+
+% --- bibliography (author-year) ---
+\usepackage[round,authoryear]{natbib}
+\bibliographystyle{plainnat}
+
+% gently absorb the occasional long unbreakable token (code/URLs) instead of
+% overflowing into the margin
+\setlength{\emergencystretch}{3em}
+
+% allow generous page breaking around floats
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.80}
+
+\title{Hold Your Fire: Disruption-Aware Failure Monitoring for Coding Agents}
+
+\author{Faizan Ahmed\\
+\texttt{faizan@theheadstarter.com}}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\input{body}
+
+\bibliography{refs}
+
+\end{document}

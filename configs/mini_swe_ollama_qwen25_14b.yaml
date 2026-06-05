@@ -1,0 +1,13 @@
+# Reference config documenting the local Ollama model used for online runs.
+# The wrapper builds this model in code (see localguard.mini_swe_wrapper.make_local_model);
+# this file records the equivalent settings for reproducibility / mini CLI use.
+model:
+  model_name: "ollama_chat/qwen2.5-coder:14b"
+  cost_tracking: "ignore_errors"
+  model_kwargs:
+    api_base: "http://localhost:11434"
+    temperature: 0
+    num_ctx: 32768
+agent:
+  step_limit: 40
+  cost_limit: 0

@@ -1,0 +1,7 @@
+{
+  "repo": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-3bit",
+  "decisions": 109,
+  "persist": 1,
+  "recover": 7,
+  "note": "insufficient contrast"
+}

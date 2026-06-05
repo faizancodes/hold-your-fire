@@ -1,0 +1,48 @@
+{
+  "mode": "aggressive_penalize_all",
+  "solve_rate": 0.0,
+  "rows": [
+    {
+      "task": "add_op",
+      "solved": 0,
+      "loops": 7,
+      "interv": 7,
+      "esc": 7
+    },
+    {
+      "task": "double",
+      "solved": 0,
+      "loops": 7,
+      "interv": 7,
+      "esc": 7
+    },
+    {
+      "task": "greet_typo",
+      "solved": 0,
+      "loops": 5,
+      "interv": 5,
+      "esc": 5
+    },
+    {
+      "task": "last_index",
+      "solved": 0,
+      "loops": 7,
+      "interv": 7,
+      "esc": 7
+    },
+    {
+      "task": "is_pos",
+      "solved": 0,
+      "loops": 7,
+      "interv": 7,
+      "esc": 7
+    },
+    {
+      "task": "factorial",
+      "solved": 0,
+      "loops": 7,
+      "interv": 7,
+      "esc": 7
+    }
+  ]
+}

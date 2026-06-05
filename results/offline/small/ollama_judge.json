@@ -1,0 +1,14 @@
+{
+  "model": "qwen2.5-coder:7b",
+  "n": 200,
+  "n_pos": 100,
+  "invalid_json_rate": 0.0,
+  "avg_latency_s": 9.84,
+  "judge_auc": 0.5586,
+  "judge_auprc": 0.5587552628004888,
+  "judge_auc_valid_only": 0.5586,
+  "classifier": "random_forest",
+  "classifier_auc": 0.7681,
+  "classifier_auprc": 0.7726052246808818,
+  "should_intervene_rate": 0.965
+}

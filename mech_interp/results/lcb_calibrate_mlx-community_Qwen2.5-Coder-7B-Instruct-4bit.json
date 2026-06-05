@@ -1,0 +1,239 @@
+{
+  "repo": "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit",
+  "mode": "harvest",
+  "temp": 0.7,
+  "seeds": [
+    0,
+    1
+  ],
+  "by_difficulty": {
+    "easy": 0.875,
+    "medium": 0.0
+  },
+  "rows": [
+    {
+      "id": "abc387_a",
+      "difficulty": "easy",
+      "seed": 0,
+      "solved": true,
+      "attempts": 1
+    },
+    {
+      "id": "abc387_a",
+      "difficulty": "easy",
+      "seed": 1,
+      "solved": true,
+      "attempts": 1
+    },
+    {
+      "id": "abc387_b",
+      "difficulty": "easy",
+      "seed": 0,
+      "solved": true,
+      "attempts": 3
+    },
+    {
+      "id": "abc387_b",
+      "difficulty": "easy",
+      "seed": 1,
+      "solved": true,
+      "attempts": 2
+    },
+    {
+      "id": "abc388_a",
+      "difficulty": "easy",
+      "seed": 0,
+      "solved": true,
+      "attempts": 1
+    },
+    {
+      "id": "abc388_a",
+      "difficulty": "easy",
+      "seed": 1,
+      "solved": true,
+      "attempts": 1
+    },
+    {
+      "id": "abc388_b",
+      "difficulty": "easy",
+      "seed": 0,
+      "solved": true,
+      "attempts": 1
+    },
+    {
+      "id": "abc388_b",
+      "difficulty": "easy",
+      "seed": 1,
+      "solved": true,
+      "attempts": 1
+    },
+    {
+      "id": "abc389_a",
+      "difficulty": "easy",
+      "seed": 0,
+      "solved": true,
+      "attempts": 1
+    },
+    {
+      "id": "abc389_a",
+      "difficulty": "easy",
+      "seed": 1,
+      "solved": true,
+      "attempts": 1
+    },
+    {
+      "id": "abc389_b",
+      "difficulty": "easy",
+      "seed": 0,
+      "solved": true,
+      "attempts": 2
+    },
+    {
+      "id": "abc389_b",
+      "difficulty": "easy",
+      "seed": 1,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc390_a",
+      "difficulty": "easy",
+      "seed": 0,
+      "solved": true,
+      "attempts": 1
+    },
+    {
+      "id": "abc390_a",
+      "difficulty": "easy",
+      "seed": 1,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc390_b",
+      "difficulty": "easy",
+      "seed": 0,
+      "solved": true,
+      "attempts": 1
+    },
+    {
+      "id": "abc390_b",
+      "difficulty": "easy",
+      "seed": 1,
+      "solved": true,
+      "attempts": 1
+    },
+    {
+      "id": "abc387_c",
+      "difficulty": "medium",
+      "seed": 0,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc387_c",
+      "difficulty": "medium",
+      "seed": 1,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc388_c",
+      "difficulty": "medium",
+      "seed": 0,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc388_c",
+      "difficulty": "medium",
+      "seed": 1,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc388_d",
+      "difficulty": "medium",
+      "seed": 0,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc388_d",
+      "difficulty": "medium",
+      "seed": 1,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc389_d",
+      "difficulty": "medium",
+      "seed": 0,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc389_d",
+      "difficulty": "medium",
+      "seed": 1,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc390_c",
+      "difficulty": "medium",
+      "seed": 0,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc390_c",
+      "difficulty": "medium",
+      "seed": 1,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc390_d",
+      "difficulty": "medium",
+      "seed": 0,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc390_d",
+      "difficulty": "medium",
+      "seed": 1,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc391_d",
+      "difficulty": "medium",
+      "seed": 0,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc391_d",
+      "difficulty": "medium",
+      "seed": 1,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc392_c",
+      "difficulty": "medium",
+      "seed": 0,
+      "solved": false,
+      "attempts": 4
+    },
+    {
+      "id": "abc392_c",
+      "difficulty": "medium",
+      "seed": 1,
+      "solved": false,
+      "attempts": 4
+    }
+  ]
+}

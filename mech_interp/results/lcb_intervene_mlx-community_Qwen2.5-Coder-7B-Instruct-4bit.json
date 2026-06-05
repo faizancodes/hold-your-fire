@@ -1,0 +1,354 @@
+{
+  "repo": "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit",
+  "diffs": [
+    "easy",
+    "medium"
+  ],
+  "n": 8,
+  "seeds": [
+    0,
+    1
+  ],
+  "budget": 4,
+  "flail_after": 1,
+  "n_flailed": 21,
+  "by_difficulty": {
+    "easy": [
+      4,
+      2,
+      5
+    ],
+    "medium": [
+      1,
+      0,
+      16
+    ]
+  },
+  "overall": [
+    5,
+    2,
+    21
+  ],
+  "control": {
+    "abc387_a|0": {
+      "solved": true,
+      "attempts": 1,
+      "flailed": false,
+      "difficulty": "easy"
+    },
+    "abc387_a|1": {
+      "solved": true,
+      "attempts": 1,
+      "flailed": false,
+      "difficulty": "easy"
+    },
+    "abc387_b|0": {
+      "solved": true,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "easy"
+    },
+    "abc387_b|1": {
+      "solved": true,
+      "attempts": 2,
+      "flailed": true,
+      "difficulty": "easy"
+    },
+    "abc388_a|0": {
+      "solved": true,
+      "attempts": 1,
+      "flailed": false,
+      "difficulty": "easy"
+    },
+    "abc388_a|1": {
+      "solved": true,
+      "attempts": 1,
+      "flailed": false,
+      "difficulty": "easy"
+    },
+    "abc388_b|0": {
+      "solved": true,
+      "attempts": 1,
+      "flailed": false,
+      "difficulty": "easy"
+    },
+    "abc388_b|1": {
+      "solved": true,
+      "attempts": 1,
+      "flailed": false,
+      "difficulty": "easy"
+    },
+    "abc389_a|0": {
+      "solved": true,
+      "attempts": 1,
+      "flailed": false,
+      "difficulty": "easy"
+    },
+    "abc389_a|1": {
+      "solved": true,
+      "attempts": 1,
+      "flailed": false,
+      "difficulty": "easy"
+    },
+    "abc389_b|0": {
+      "solved": true,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "easy"
+    },
+    "abc389_b|1": {
+      "solved": true,
+      "attempts": 2,
+      "flailed": true,
+      "difficulty": "easy"
+    },
+    "abc390_a|0": {
+      "solved": true,
+      "attempts": 1,
+      "flailed": false,
+      "difficulty": "easy"
+    },
+    "abc390_a|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "easy"
+    },
+    "abc390_b|0": {
+      "solved": true,
+      "attempts": 1,
+      "flailed": false,
+      "difficulty": "easy"
+    },
+    "abc390_b|1": {
+      "solved": true,
+      "attempts": 1,
+      "flailed": false,
+      "difficulty": "easy"
+    },
+    "abc387_c|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc387_c|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc388_c|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc388_c|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc388_d|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc388_d|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc389_d|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc389_d|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc390_c|0": {
+      "solved": true,
+      "attempts": 3,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc390_c|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc390_d|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc390_d|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc391_d|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc391_d|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc392_c|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc392_c|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    }
+  },
+  "treatment": {
+    "abc387_b|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "easy"
+    },
+    "abc387_b|1": {
+      "solved": true,
+      "attempts": 3,
+      "flailed": true,
+      "difficulty": "easy"
+    },
+    "abc389_b|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "easy"
+    },
+    "abc389_b|1": {
+      "solved": true,
+      "attempts": 2,
+      "flailed": true,
+      "difficulty": "easy"
+    },
+    "abc390_a|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "easy"
+    },
+    "abc387_c|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc387_c|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc388_c|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc388_c|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc388_d|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc388_d|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc389_d|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc389_d|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc390_c|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc390_c|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc390_d|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc390_d|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc391_d|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc391_d|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc392_c|0": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    },
+    "abc392_c|1": {
+      "solved": false,
+      "attempts": 4,
+      "flailed": true,
+      "difficulty": "medium"
+    }
+  }
+}

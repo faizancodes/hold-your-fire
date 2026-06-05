@@ -1,0 +1,65 @@
+{
+  "n_rows": 1000,
+  "columns": {
+    "instance_id": {
+      "str": 1000
+    },
+    "model_name": {
+      "str": 1000
+    },
+    "target": {
+      "bool": 1000
+    },
+    "trajectory": {
+      "str": 1000
+    },
+    "exit_status": {
+      "str": 1000
+    },
+    "generated_patch": {
+      "str": 892,
+      "NoneType": 108
+    },
+    "eval_logs": {
+      "str": 874,
+      "NoneType": 126
+    }
+  },
+  "label_balance": {
+    "False": 831,
+    "True": 169
+  },
+  "fail_rate": 0.831,
+  "model_name_counts": {
+    "swe-agent-llama-70b": 834,
+    "swe-agent-llama-8b": 137,
+    "swe-agent-llama-405b": 29
+  },
+  "exit_status_counts": {
+    "submitted": 658,
+    "submitted (exit_context)": 262,
+    "exit_context": 35,
+    "submitted_no_patch": 23,
+    "early_exit": 19,
+    "submitted (exit_format)": 3
+  },
+  "n_steps": {
+    "min": 1,
+    "p50": 17,
+    "p90": 54,
+    "p99": 175,
+    "max": 349,
+    "mean": 27.14,
+    "n_empty_trajectories": 0
+  },
+  "action_type_counts": {
+    "edit": 8727,
+    "search": 5565,
+    "read": 4863,
+    "test": 3078,
+    "environment": 2936,
+    "other": 1176,
+    "submit": 771,
+    "install": 27
+  }
+}

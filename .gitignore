@@ -1,0 +1,62 @@
+.env
+design.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Data — do not commit raw or large processed artifacts
+data/raw/
+data/interim/
+data/processed/
+!data/samples/
+!data/samples/**
+
+# Models / results are reproducible; keep tracked summaries only.
+# Ignore ALL model binaries (incl. subdirs like models/monitor/full/) — they
+# regenerate via `make train-full` and some exceed GitHub's 100MB file limit.
+*.joblib
+results/online/runs/
+*.parquet
+!data/samples/**/*.parquet
+
+# Transient experiment driver + logs (online runs are reproducible)
+run_remaining_experiments.sh
+run_loopguard.sh
+results/online/_experiments.log
+results/online/_loopguard.log
+results/online/_judge_progress.log
+results/online/baseline_level*_*.json
+
+# OS
+.DS_Store
+run_loopguard_fast.sh
+results/online/_loopguard_fast.log
+configs/online_loop_guard_fast.yaml
+run_v2_ab.sh
+results/online/_v2ab.log
+run_v2_full.sh
+run_strengthen.sh
+results/online/_strengthen.log
+results/online/shadow_capture_l3.jsonl
+
+# mech_interp study: local venv, transient logs, and large reproducible activation
+# caches are ignored; results JSON/PNG and the small learned direction vectors (.npy) are kept
+mech_interp/.venv/
+mech_interp/results/*.log
+mech_interp/results/*.npz
+
+# LaTeX build artifacts (PDF is committed; aux files are not)
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg

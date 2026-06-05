@@ -1,0 +1,30 @@
+{
+  "judge_model": "anthropic/claude-opus-4.8",
+  "backend": "openrouter",
+  "resolved_model": "anthropic/claude-4.8-opus-20260528",
+  "reasoning_effort": "low",
+  "n": 200,
+  "n_pos": 100,
+  "invalid_json_rate": 0.0,
+  "avg_latency_s": 7.36,
+  "gpt_judge_auc": 0.6392,
+  "gpt_judge_auprc": 0.6338846907474859,
+  "classifier": "random_forest",
+  "classifier_auc": 0.7681,
+  "local_judge_auc_qwen7b": 0.5586,
+  "should_intervene_rate": 0.43,
+  "paired_classifier_minus_gptjudge": {
+    "auc_classifier": 0.7681,
+    "auc_gpt_judge": 0.6392,
+    "delta_gpt_minus_clf": -0.1289,
+    "delta_lo": -0.2368,
+    "delta_hi": -0.0165,
+    "frac_gpt_better": 0.011
+  },
+  "tokens": {
+    "input": 319301,
+    "output": 45088,
+    "reasoning": 11626
+  },
+  "est_cost_usd": 2.6965
+}

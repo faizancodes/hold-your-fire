@@ -1,0 +1,257 @@
+{
+  "summary": {
+    "n_success": 14,
+    "n_fail": 11,
+    "disruption_success_fire_rate": {
+      "ungated": 0.786,
+      "gated": 0.071
+    },
+    "disruption_total_interventions_on_success": {
+      "ungated": 12,
+      "gated": 2
+    },
+    "disruption_EARLY_interventions_on_success": {
+      "ungated": 1,
+      "gated": 0
+    },
+    "disruption_mean_first_alarm_fraction_on_success": {
+      "ungated": 0.778,
+      "gated": 0.5
+    },
+    "coverage_fail_fire_rate": {
+      "ungated": 0.727,
+      "gated": 0.455
+    },
+    "coverage_mean_first_alarm_fraction_on_fail": {
+      "ungated": 0.481,
+      "gated": 0.513
+    }
+  },
+  "per_run": [
+    {
+      "instance_id": "off_by_one",
+      "success": true,
+      "n_steps": 30,
+      "ungated_n": 2,
+      "ungated_first": 10,
+      "gated_n": 2,
+      "gated_first": 15
+    },
+    {
+      "instance_id": "strip_prefix",
+      "success": false,
+      "n_steps": 30,
+      "ungated_n": 0,
+      "ungated_first": null,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "dedup_order",
+      "success": false,
+      "n_steps": 30,
+      "ungated_n": 2,
+      "ungated_first": 6,
+      "gated_n": 2,
+      "gated_first": 14
+    },
+    {
+      "instance_id": "sum_list",
+      "success": true,
+      "n_steps": 6,
+      "ungated_n": 1,
+      "ungated_first": 5,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "max_of_three",
+      "success": false,
+      "n_steps": 6,
+      "ungated_n": 1,
+      "ungated_first": 5,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "count_char",
+      "success": true,
+      "n_steps": 8,
+      "ungated_n": 0,
+      "ungated_first": null,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "celsius",
+      "success": false,
+      "n_steps": 5,
+      "ungated_n": 0,
+      "ungated_first": null,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "last_word",
+      "success": false,
+      "n_steps": 8,
+      "ungated_n": 1,
+      "ungated_first": 6,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "clamp",
+      "success": false,
+      "n_steps": 30,
+      "ungated_n": 2,
+      "ungated_first": 14,
+      "gated_n": 2,
+      "gated_first": 22
+    },
+    {
+      "instance_id": "sum_evens",
+      "success": true,
+      "n_steps": 6,
+      "ungated_n": 1,
+      "ungated_first": 5,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "is_even",
+      "success": true,
+      "n_steps": 6,
+      "ungated_n": 1,
+      "ungated_first": 5,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "average",
+      "success": false,
+      "n_steps": 30,
+      "ungated_n": 2,
+      "ungated_first": 9,
+      "gated_n": 2,
+      "gated_first": 13
+    },
+    {
+      "instance_id": "reverse_str",
+      "success": false,
+      "n_steps": 30,
+      "ungated_n": 2,
+      "ungated_first": 9,
+      "gated_n": 2,
+      "gated_first": 13
+    },
+    {
+      "instance_id": "factorial",
+      "success": true,
+      "n_steps": 7,
+      "ungated_n": 1,
+      "ungated_first": 5,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "min_list",
+      "success": false,
+      "n_steps": 30,
+      "ungated_n": 2,
+      "ungated_first": 5,
+      "gated_n": 2,
+      "gated_first": 15
+    },
+    {
+      "instance_id": "count_vowels",
+      "success": true,
+      "n_steps": 8,
+      "ungated_n": 1,
+      "ungated_first": 7,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "remove_spaces",
+      "success": true,
+      "n_steps": 9,
+      "ungated_n": 1,
+      "ungated_first": 7,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "is_sorted",
+      "success": false,
+      "n_steps": 6,
+      "ungated_n": 1,
+      "ungated_first": 5,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "square_list",
+      "success": false,
+      "n_steps": 5,
+      "ungated_n": 0,
+      "ungated_first": null,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "is_prime",
+      "success": true,
+      "n_steps": 6,
+      "ungated_n": 0,
+      "ungated_first": null,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "swap_case",
+      "success": true,
+      "n_steps": 7,
+      "ungated_n": 1,
+      "ungated_first": 6,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "find_first",
+      "success": true,
+      "n_steps": 6,
+      "ungated_n": 1,
+      "ungated_first": 5,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "title_case",
+      "success": true,
+      "n_steps": 7,
+      "ungated_n": 0,
+      "ungated_first": null,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "gcd",
+      "success": true,
+      "n_steps": 6,
+      "ungated_n": 1,
+      "ungated_first": 5,
+      "gated_n": 0,
+      "gated_first": null
+    },
+    {
+      "instance_id": "list_sum_pos",
+      "success": true,
+      "n_steps": 6,
+      "ungated_n": 1,
+      "ungated_first": 5,
+      "gated_n": 0,
+      "gated_first": null
+    }
+  ]
+}

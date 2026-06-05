@@ -1,0 +1,35 @@
+{
+  "baseline_test": 0.7214,
+  "cases": [
+    {
+      "label": "advanced features",
+      "val": 0.7247,
+      "test": 0.7244
+    },
+    {
+      "label": "v2 focused (val-pick)",
+      "val": 0.7259,
+      "test": 0.7211
+    },
+    {
+      "label": "sequence GRU",
+      "val": 0.7255,
+      "test": 0.7163
+    },
+    {
+      "label": "label pos-weighting",
+      "val": 0.7288,
+      "test": 0.7158
+    },
+    {
+      "label": "survival GRU",
+      "val": 0.7255,
+      "test": 0.7163
+    },
+    {
+      "label": "ensemble (survives)",
+      "val": 0.7255,
+      "test": 0.7244
+    }
+  ]
+}

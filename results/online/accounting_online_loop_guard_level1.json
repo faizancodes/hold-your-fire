@@ -1,0 +1,1919 @@
+{
+  "accounting": {
+    "policy": "online_loop_guard",
+    "n_tasks": 3,
+    "baseline_success_rate": 0.3333,
+    "policy_success_rate": 0.3333,
+    "recovery_count": 0,
+    "disruption_count": 0,
+    "unchanged_success_count": 1,
+    "unchanged_failure_count": 2,
+    "safe_saving_count": 0,
+    "harmful_waste_count": 0,
+    "avg_steps_baseline": 40.0,
+    "avg_steps_policy": 31.0,
+    "interventions_per_run": 2.0
+  },
+  "baseline": [
+    {
+      "instance_id": "off_by_one",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "baseline",
+      "mode": "baseline",
+      "success": true,
+      "n_steps": 40,
+      "n_interventions": 0,
+      "first_alarm_step": null,
+      "exit_status": "LimitsExceeded",
+      "diff_files_changed": 1,
+      "diff_lines_added": 1,
+      "diff_lines_deleted": 1,
+      "n_test_runs": 37,
+      "total_tokens_approx": 2484,
+      "runtime_s": 148.1,
+      "trajectory_path": "/tmp/claude-501/lg_online_baseline_l_xyrnbq/off_by_one__baseline.traj.json",
+      "verdicts": [],
+      "injected": []
+    },
+    {
+      "instance_id": "strip_prefix",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "baseline",
+      "mode": "baseline",
+      "success": false,
+      "n_steps": 40,
+      "n_interventions": 0,
+      "first_alarm_step": null,
+      "exit_status": "LimitsExceeded",
+      "diff_files_changed": 1,
+      "diff_lines_added": 19,
+      "diff_lines_deleted": 0,
+      "n_test_runs": 19,
+      "total_tokens_approx": 6328,
+      "runtime_s": 236.2,
+      "trajectory_path": "/tmp/claude-501/lg_online_baseline_l_xyrnbq/strip_prefix__baseline.traj.json",
+      "verdicts": [],
+      "injected": []
+    },
+    {
+      "instance_id": "dedup_order",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "baseline",
+      "mode": "baseline",
+      "success": false,
+      "n_steps": 40,
+      "n_interventions": 0,
+      "first_alarm_step": null,
+      "exit_status": "LimitsExceeded",
+      "diff_files_changed": 1,
+      "diff_lines_added": 38,
+      "diff_lines_deleted": 1,
+      "n_test_runs": 1,
+      "total_tokens_approx": 7691,
+      "runtime_s": 250.8,
+      "trajectory_path": "/tmp/claude-501/lg_online_baseline_l_xyrnbq/dedup_order__baseline.traj.json",
+      "verdicts": [],
+      "injected": []
+    }
+  ],
+  "policy": [
+    {
+      "instance_id": "off_by_one",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "online_loop_guard",
+      "mode": "intervention",
+      "success": true,
+      "n_steps": 40,
+      "n_interventions": 2,
+      "first_alarm_step": 6,
+      "exit_status": "LimitsExceeded",
+      "diff_files_changed": 0,
+      "diff_lines_added": 0,
+      "diff_lines_deleted": 0,
+      "n_test_runs": 35,
+      "total_tokens_approx": 2834,
+      "runtime_s": 721.1,
+      "trajectory_path": "/tmp/claude-501/lg_online_online_loop_guard_vwtvamra/off_by_one__online_loop_guard.traj.json",
+      "verdicts": [
+        {
+          "step": 1,
+          "risk_score": 0.49587537838256507,
+          "calibrated_risk": 0.48202137998056366,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.48202137998056366
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 2,
+          "risk_score": 0.5185560017243434,
+          "calibrated_risk": 0.5024154589371982,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5024154589371982
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 3,
+          "risk_score": 0.5614997890131931,
+          "calibrated_risk": 0.5458715596330272,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "forced kind trigger not active",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.5458715596330272
+            },
+            "n_edit": 1,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 4,
+          "risk_score": 0.7320444024942802,
+          "calibrated_risk": 0.6942675159235668,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "forced kind trigger not active",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.6942675159235668
+            },
+            "n_edit": 1,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 5,
+          "risk_score": 0.7702785940095475,
+          "calibrated_risk": 0.7404255319148936,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "forced kind trigger not active",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.7404255319148936
+            },
+            "n_edit": 1,
+            "n_test_runs": 2,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 6,
+          "risk_score": 0.759039097638824,
+          "calibrated_risk": 0.6942675159235668,
+          "alarm": true,
+          "recommended_intervention": "loop_guard",
+          "reason": "loop trigger",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.6942675159235668
+            },
+            "n_edit": 1,
+            "n_test_runs": 3,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 7,
+          "risk_score": 0.7053326317964971,
+          "calibrated_risk": 0.6887966804979253,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.6887966804979253
+            },
+            "n_edit": 1,
+            "n_test_runs": 3,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 8,
+          "risk_score": 0.8235447578919722,
+          "calibrated_risk": 0.7404255319148936,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7404255319148936
+            },
+            "n_edit": 1,
+            "n_test_runs": 4,
+            "max_command_repeat_count": 3,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 9,
+          "risk_score": 0.7794676595620704,
+          "calibrated_risk": 0.7404255319148936,
+          "alarm": true,
+          "recommended_intervention": "loop_guard",
+          "reason": "loop trigger",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.7404255319148936
+            },
+            "n_edit": 1,
+            "n_test_runs": 5,
+            "max_command_repeat_count": 4,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 10,
+          "risk_score": 0.836811819042034,
+          "calibrated_risk": 0.7404255319148936,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7404255319148936
+            },
+            "n_edit": 1,
+            "n_test_runs": 5,
+            "max_command_repeat_count": 4,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 11,
+          "risk_score": 0.8833341636214269,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 1,
+            "n_test_runs": 6,
+            "max_command_repeat_count": 5,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 12,
+          "risk_score": 0.885773625533985,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 1,
+            "n_test_runs": 7,
+            "max_command_repeat_count": 6,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 13,
+          "risk_score": 0.8619268248343651,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 1,
+            "n_test_runs": 8,
+            "max_command_repeat_count": 7,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 14,
+          "risk_score": 0.8872156292329334,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 1,
+            "n_test_runs": 9,
+            "max_command_repeat_count": 8,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 15,
+          "risk_score": 0.8445851990218962,
+          "calibrated_risk": 0.7404255319148936,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7404255319148936
+            },
+            "n_edit": 1,
+            "n_test_runs": 10,
+            "max_command_repeat_count": 9,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 16,
+          "risk_score": 0.8841721614422962,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 1,
+            "n_test_runs": 11,
+            "max_command_repeat_count": 10,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 17,
+          "risk_score": 0.9301429478806594,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 1,
+            "n_test_runs": 12,
+            "max_command_repeat_count": 11,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 18,
+          "risk_score": 0.956352513891889,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 1,
+            "n_test_runs": 13,
+            "max_command_repeat_count": 12,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 19,
+          "risk_score": 0.956352513891889,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 1,
+            "n_test_runs": 14,
+            "max_command_repeat_count": 13,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 20,
+          "risk_score": 0.968944445189696,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 1,
+            "n_test_runs": 15,
+            "max_command_repeat_count": 14,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 21,
+          "risk_score": 0.968944445189696,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 1,
+            "n_test_runs": 16,
+            "max_command_repeat_count": 15,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 22,
+          "risk_score": 0.968944445189696,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 1,
+            "n_test_runs": 17,
+            "max_command_repeat_count": 16,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 23,
+          "risk_score": 0.968944445189696,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 1,
+            "n_test_runs": 18,
+            "max_command_repeat_count": 17,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 24,
+          "risk_score": 0.9712651751691024,
+          "calibrated_risk": 0.9215686274509803,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9215686274509803
+            },
+            "n_edit": 1,
+            "n_test_runs": 19,
+            "max_command_repeat_count": 18,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 25,
+          "risk_score": 0.974632304589472,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 20,
+            "max_command_repeat_count": 19,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 26,
+          "risk_score": 0.9754934356054117,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 21,
+            "max_command_repeat_count": 20,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 27,
+          "risk_score": 0.9785651636363173,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 22,
+            "max_command_repeat_count": 21,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 28,
+          "risk_score": 0.9803434477260984,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 23,
+            "max_command_repeat_count": 22,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 29,
+          "risk_score": 0.9803434477260984,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 24,
+            "max_command_repeat_count": 23,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 30,
+          "risk_score": 0.985835310582143,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 25,
+            "max_command_repeat_count": 24,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 31,
+          "risk_score": 0.984449201159728,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 26,
+            "max_command_repeat_count": 25,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 32,
+          "risk_score": 0.984449201159728,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 27,
+            "max_command_repeat_count": 26,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 33,
+          "risk_score": 0.9850018481652235,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 28,
+            "max_command_repeat_count": 27,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 34,
+          "risk_score": 0.9850018481652235,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 29,
+            "max_command_repeat_count": 28,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 35,
+          "risk_score": 0.9850018481652235,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 30,
+            "max_command_repeat_count": 29,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 36,
+          "risk_score": 0.9822778926077502,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 31,
+            "max_command_repeat_count": 30,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 37,
+          "risk_score": 0.9822778926077502,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 32,
+            "max_command_repeat_count": 31,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 38,
+          "risk_score": 0.9794770884924517,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 33,
+            "max_command_repeat_count": 32,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 39,
+          "risk_score": 0.9794370094445595,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 34,
+            "max_command_repeat_count": 33,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 40,
+          "risk_score": 0.9847444157957772,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 1,
+            "n_test_runs": 35,
+            "max_command_repeat_count": 34,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        }
+      ],
+      "injected": [
+        {
+          "step": 6,
+          "kind": "loop_guard"
+        },
+        {
+          "step": 9,
+          "kind": "loop_guard"
+        }
+      ]
+    },
+    {
+      "instance_id": "strip_prefix",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "online_loop_guard",
+      "mode": "intervention",
+      "success": false,
+      "n_steps": 40,
+      "n_interventions": 2,
+      "first_alarm_step": 6,
+      "exit_status": "LimitsExceeded",
+      "diff_files_changed": 0,
+      "diff_lines_added": 0,
+      "diff_lines_deleted": 0,
+      "n_test_runs": 18,
+      "total_tokens_approx": 7851,
+      "runtime_s": 1798.2,
+      "trajectory_path": "/tmp/claude-501/lg_online_online_loop_guard_vwtvamra/strip_prefix__online_loop_guard.traj.json",
+      "verdicts": [
+        {
+          "step": 1,
+          "risk_score": 0.49587537838256507,
+          "calibrated_risk": 0.48202137998056366,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.48202137998056366
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 2,
+          "risk_score": 0.5566497372553183,
+          "calibrated_risk": 0.5458715596330272,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5458715596330272
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 3,
+          "risk_score": 0.592045975833632,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "forced kind trigger not active",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 1,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 4,
+          "risk_score": 0.5666783863158827,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "forced kind trigger not active",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 1,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 5,
+          "risk_score": 0.7502270634337412,
+          "calibrated_risk": 0.6942675159235668,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "forced kind trigger not active",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.6942675159235668
+            },
+            "n_edit": 2,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 6,
+          "risk_score": 0.6514062232040104,
+          "calibrated_risk": 0.6053540587219344,
+          "alarm": true,
+          "recommended_intervention": "loop_guard",
+          "reason": "loop trigger",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.6053540587219344
+            },
+            "n_edit": 2,
+            "n_test_runs": 2,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 7,
+          "risk_score": 0.6980900224150206,
+          "calibrated_risk": 0.6824644549763034,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.6824644549763034
+            },
+            "n_edit": 3,
+            "n_test_runs": 2,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 8,
+          "risk_score": 0.6920303149180662,
+          "calibrated_risk": 0.6824644549763034,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.6824644549763034
+            },
+            "n_edit": 3,
+            "n_test_runs": 3,
+            "max_command_repeat_count": 3,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 9,
+          "risk_score": 0.5311218144207148,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": true,
+          "recommended_intervention": "loop_guard",
+          "reason": "loop trigger",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 4,
+            "n_test_runs": 3,
+            "max_command_repeat_count": 3,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 10,
+          "risk_score": 0.5633454583620414,
+          "calibrated_risk": 0.5458715596330272,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5458715596330272
+            },
+            "n_edit": 5,
+            "n_test_runs": 3,
+            "max_command_repeat_count": 4,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 11,
+          "risk_score": 0.5444099054761528,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 5,
+            "n_test_runs": 4,
+            "max_command_repeat_count": 4,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 12,
+          "risk_score": 0.6840319179075117,
+          "calibrated_risk": 0.6432748538011696,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.6432748538011696
+            },
+            "n_edit": 6,
+            "n_test_runs": 4,
+            "max_command_repeat_count": 5,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 13,
+          "risk_score": 0.672734788657665,
+          "calibrated_risk": 0.6218905472636818,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.6218905472636818
+            },
+            "n_edit": 6,
+            "n_test_runs": 5,
+            "max_command_repeat_count": 5,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 14,
+          "risk_score": 0.6665054653270553,
+          "calibrated_risk": 0.6053540587219344,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.6053540587219344
+            },
+            "n_edit": 7,
+            "n_test_runs": 5,
+            "max_command_repeat_count": 6,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 15,
+          "risk_score": 0.549398364541289,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 7,
+            "n_test_runs": 6,
+            "max_command_repeat_count": 6,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 16,
+          "risk_score": 0.5531725686819312,
+          "calibrated_risk": 0.5458715596330272,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5458715596330272
+            },
+            "n_edit": 8,
+            "n_test_runs": 6,
+            "max_command_repeat_count": 7,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 17,
+          "risk_score": 0.5431132560346158,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 8,
+            "n_test_runs": 7,
+            "max_command_repeat_count": 7,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 18,
+          "risk_score": 0.5345666917246639,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 9,
+            "n_test_runs": 7,
+            "max_command_repeat_count": 8,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 19,
+          "risk_score": 0.518615472992407,
+          "calibrated_risk": 0.5024154589371982,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5024154589371982
+            },
+            "n_edit": 9,
+            "n_test_runs": 8,
+            "max_command_repeat_count": 8,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 20,
+          "risk_score": 0.505535023732518,
+          "calibrated_risk": 0.48826291079812206,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.48826291079812206
+            },
+            "n_edit": 10,
+            "n_test_runs": 8,
+            "max_command_repeat_count": 9,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 21,
+          "risk_score": 0.4654259205942185,
+          "calibrated_risk": 0.46950819672131155,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.46950819672131155
+            },
+            "n_edit": 10,
+            "n_test_runs": 9,
+            "max_command_repeat_count": 9,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 22,
+          "risk_score": 0.5274641258213949,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 11,
+            "n_test_runs": 9,
+            "max_command_repeat_count": 10,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 23,
+          "risk_score": 0.473586604536818,
+          "calibrated_risk": 0.47577092511013214,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.47577092511013214
+            },
+            "n_edit": 11,
+            "n_test_runs": 10,
+            "max_command_repeat_count": 10,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 24,
+          "risk_score": 0.686291350867679,
+          "calibrated_risk": 0.6666666666666666,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.6666666666666666
+            },
+            "n_edit": 12,
+            "n_test_runs": 10,
+            "max_command_repeat_count": 11,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 25,
+          "risk_score": 0.5760772199447803,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 12,
+            "n_test_runs": 11,
+            "max_command_repeat_count": 11,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 26,
+          "risk_score": 0.6111593425992841,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 13,
+            "n_test_runs": 11,
+            "max_command_repeat_count": 12,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 27,
+          "risk_score": 0.572370588744926,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 13,
+            "n_test_runs": 12,
+            "max_command_repeat_count": 12,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 28,
+          "risk_score": 0.6082354871347952,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 14,
+            "n_test_runs": 12,
+            "max_command_repeat_count": 13,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 29,
+          "risk_score": 0.6066576766142877,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 14,
+            "n_test_runs": 13,
+            "max_command_repeat_count": 13,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 30,
+          "risk_score": 0.6553484232573663,
+          "calibrated_risk": 0.6053540587219344,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.6053540587219344
+            },
+            "n_edit": 15,
+            "n_test_runs": 13,
+            "max_command_repeat_count": 14,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 31,
+          "risk_score": 0.6479310411115553,
+          "calibrated_risk": 0.6053540587219344,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.6053540587219344
+            },
+            "n_edit": 15,
+            "n_test_runs": 14,
+            "max_command_repeat_count": 14,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 32,
+          "risk_score": 0.6096336150726944,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 16,
+            "n_test_runs": 14,
+            "max_command_repeat_count": 15,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 33,
+          "risk_score": 0.6291272923019999,
+          "calibrated_risk": 0.5833333333333334,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5833333333333334
+            },
+            "n_edit": 16,
+            "n_test_runs": 15,
+            "max_command_repeat_count": 15,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 34,
+          "risk_score": 0.6291272923019999,
+          "calibrated_risk": 0.5833333333333334,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5833333333333334
+            },
+            "n_edit": 17,
+            "n_test_runs": 15,
+            "max_command_repeat_count": 16,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 35,
+          "risk_score": 0.6291272923019999,
+          "calibrated_risk": 0.5833333333333334,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5833333333333334
+            },
+            "n_edit": 17,
+            "n_test_runs": 16,
+            "max_command_repeat_count": 16,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 36,
+          "risk_score": 0.5970283766654677,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 18,
+            "n_test_runs": 16,
+            "max_command_repeat_count": 17,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 37,
+          "risk_score": 0.5884675950001977,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 18,
+            "n_test_runs": 17,
+            "max_command_repeat_count": 17,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 38,
+          "risk_score": 0.507689278186084,
+          "calibrated_risk": 0.4979423868312756,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.4979423868312756
+            },
+            "n_edit": 19,
+            "n_test_runs": 17,
+            "max_command_repeat_count": 18,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 39,
+          "risk_score": 0.4956737949601361,
+          "calibrated_risk": 0.48202137998056366,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.48202137998056366
+            },
+            "n_edit": 19,
+            "n_test_runs": 18,
+            "max_command_repeat_count": 18,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 40,
+          "risk_score": 0.5740669385357213,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 20,
+            "n_test_runs": 18,
+            "max_command_repeat_count": 19,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        }
+      ],
+      "injected": [
+        {
+          "step": 6,
+          "kind": "loop_guard"
+        },
+        {
+          "step": 9,
+          "kind": "loop_guard"
+        }
+      ]
+    },
+    {
+      "instance_id": "dedup_order",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "online_loop_guard",
+      "mode": "intervention",
+      "success": false,
+      "n_steps": 13,
+      "n_interventions": 2,
+      "first_alarm_step": 7,
+      "exit_status": "Submitted",
+      "diff_files_changed": 0,
+      "diff_lines_added": 0,
+      "diff_lines_deleted": 0,
+      "n_test_runs": 3,
+      "total_tokens_approx": 1816,
+      "runtime_s": 286.0,
+      "trajectory_path": "/tmp/claude-501/lg_online_online_loop_guard_vwtvamra/dedup_order__online_loop_guard.traj.json",
+      "verdicts": [
+        {
+          "step": 1,
+          "risk_score": 0.49587537838256507,
+          "calibrated_risk": 0.48202137998056366,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.48202137998056366
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 2,
+          "risk_score": 0.5277991087587122,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 3,
+          "risk_score": 0.5697080391157152,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "forced kind trigger not active",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 1,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 4,
+          "risk_score": 0.5788482835271239,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "forced kind trigger not active",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 1,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 5,
+          "risk_score": 0.7564952600054083,
+          "calibrated_risk": 0.6942675159235668,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "forced kind trigger not active",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.6942675159235668
+            },
+            "n_edit": 2,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 6,
+          "risk_score": 0.8735307401857021,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "forced kind trigger not active",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 3,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 7,
+          "risk_score": 0.7404776638736706,
+          "calibrated_risk": 0.6942675159235668,
+          "alarm": true,
+          "recommended_intervention": "loop_guard",
+          "reason": "loop trigger",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.6942675159235668
+            },
+            "n_edit": 4,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 8,
+          "risk_score": 0.8010388853553015,
+          "calibrated_risk": 0.7404255319148936,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7404255319148936
+            },
+            "n_edit": 4,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 9,
+          "risk_score": 0.7825720752766133,
+          "calibrated_risk": 0.7404255319148936,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7404255319148936
+            },
+            "n_edit": 5,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 10,
+          "risk_score": 0.7534056152344194,
+          "calibrated_risk": 0.6942675159235668,
+          "alarm": true,
+          "recommended_intervention": "loop_guard",
+          "reason": "loop trigger",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "risk": 0.6942675159235668
+            },
+            "n_edit": 5,
+            "n_test_runs": 2,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 11,
+          "risk_score": 0.8712857031012355,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 5,
+            "n_test_runs": 2,
+            "max_command_repeat_count": 3,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 12,
+          "risk_score": 0.8023929995976742,
+          "calibrated_risk": 0.7404255319148936,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "risk": 0.7404255319148936
+            },
+            "n_edit": 5,
+            "n_test_runs": 3,
+            "max_command_repeat_count": 3,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        }
+      ],
+      "injected": [
+        {
+          "step": 7,
+          "kind": "loop_guard"
+        },
+        {
+          "step": 10,
+          "kind": "loop_guard"
+        }
+      ]
+    }
+  ]
+}

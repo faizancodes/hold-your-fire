@@ -1,0 +1,39 @@
+{
+  "budget_instances": 60,
+  "reps": 20,
+  "note": "matched-budget AUC controls data-size; within-shell is the controlled capability test",
+  "agents": [
+    {
+      "agent": "swe-agent-llama-8b",
+      "scaffold": "shell",
+      "success_rate": 0.413,
+      "n_instances": 310,
+      "monitorability_auc_matched60": 0.564,
+      "auc_sd": 0.0654
+    },
+    {
+      "agent": "swe-agent-llama-70b",
+      "scaffold": "shell",
+      "success_rate": 0.51,
+      "n_instances": 3558,
+      "monitorability_auc_matched60": 0.6207,
+      "auc_sd": 0.0579
+    },
+    {
+      "agent": "swe-agent-llama-405b",
+      "scaffold": "shell",
+      "success_rate": 0.664,
+      "n_instances": 65,
+      "monitorability_auc_matched60": 0.7609,
+      "auc_sd": 0.0216
+    },
+    {
+      "agent": "openhands-coderforge-32b",
+      "scaffold": "CodeAct",
+      "success_rate": 0.594,
+      "n_instances": 500,
+      "monitorability_auc_matched60": 0.5326,
+      "auc_sd": 0.0746
+    }
+  ]
+}

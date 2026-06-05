@@ -1,0 +1,57 @@
+{
+  "repo": "mlx-community/Qwen2.5-Coder-1.5B-Instruct-4bit",
+  "n_layers": 28,
+  "d_model": 1536,
+  "best_layer": 14,
+  "baseline_repeat_pref": 6.6328125,
+  "alphas": [
+    0,
+    4,
+    8,
+    12,
+    16
+  ],
+  "rows": [
+    {
+      "alpha": 0,
+      "dir": 6.6328125,
+      "random": 6.6328125,
+      "ortho": 6.6328125,
+      "novel_logp": -17.046875
+    },
+    {
+      "alpha": 4,
+      "dir": 6.046875,
+      "random": 6.96875,
+      "ortho": 6.765625,
+      "novel_logp": -16.5625
+    },
+    {
+      "alpha": 8,
+      "dir": 5.65625,
+      "random": 7.5234375,
+      "ortho": 7.09375,
+      "novel_logp": -16.3125
+    },
+    {
+      "alpha": 12,
+      "dir": 5.4921875,
+      "random": 8.4375,
+      "ortho": 7.625,
+      "novel_logp": -16.28125
+    },
+    {
+      "alpha": 16,
+      "dir": 5.578125,
+      "random": 9.6015625,
+      "ortho": 8.515625,
+      "novel_logp": -16.46875
+    }
+  ],
+  "dir_net_drop": 1.0546875,
+  "random_net_drop": -2.96875,
+  "coherent_novel_logp_preserved": false,
+  "decode_greedy": " find_file Config\nNo matches found\n$ find_file Config",
+  "decode_penalized": " find file config\nNo matches found\n$ find file config",
+  "decode_changed": true
+}

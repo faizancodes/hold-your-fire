@@ -1,0 +1,29 @@
+{
+  "judge_model": "gpt-5.5",
+  "resolved_model": "gpt-5.5-2026-04-23",
+  "reasoning_effort": "low",
+  "n": 200,
+  "n_pos": 100,
+  "invalid_json_rate": 0.0,
+  "avg_latency_s": 2.58,
+  "gpt_judge_auc": 0.62565,
+  "gpt_judge_auprc": 0.6265811557007811,
+  "classifier": "random_forest",
+  "classifier_auc": 0.7681,
+  "local_judge_auc_qwen7b": 0.56475,
+  "should_intervene_rate": 0.62,
+  "paired_classifier_minus_gptjudge": {
+    "auc_classifier": 0.7681,
+    "auc_gpt_judge": 0.6257,
+    "delta_gpt_minus_clf": -0.1424,
+    "delta_lo": -0.2549,
+    "delta_hi": -0.0237,
+    "frac_gpt_better": 0.01
+  },
+  "tokens": {
+    "input": 235221,
+    "output": 14120,
+    "reasoning": 1902
+  },
+  "est_cost_usd": 0.4352
+}

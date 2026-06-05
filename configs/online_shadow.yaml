@@ -1,0 +1,17 @@
+# Online: shadow monitoring (logs verdicts, never changes agent behavior).
+name: online_shadow
+mode: shadow
+forced_kind: null
+level: 1
+model_name: ollama_chat/qwen2.5-coder:7b
+step_limit: 40
+monitor:
+  models_dir: models/monitor/full
+  calibrators_dir: models/calibrators/full
+  model: hist_gradient_boosting
+policy:
+  min_step: 3
+  cooldown_steps: 3
+  max_interventions: 2
+  threshold: 0.5
+results_dir: results/online

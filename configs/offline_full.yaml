@@ -1,0 +1,38 @@
+# Offline monitor study — full corpus config.
+name: offline_full
+dataset: data/processed/prefix_offline_full.parquet
+seed: 42
+
+split:
+  regime: instance
+  test_size: 0.2
+  val_size: 0.2
+
+models:
+  - baseline_majority
+  - baseline_step_count_only
+  - heuristic_rule_monitor
+  - logistic_regression
+  - random_forest
+  - hist_gradient_boosting
+  - structured_plus_tfidf_logistic
+
+ablation_families:
+  - [step_count_only]
+  - [length_pace]
+  - [action_counts]
+  - [context_before_edit]
+  - [file_behavior]
+  - [testing_behavior]
+  - [loop_behavior]
+  - [all_structured]
+  - [all_structured_plus_text]
+
+text_max_features: 100000
+calibration: isotonic
+threshold_far_targets: [0.20, 0.10, 0.05]
+bootstrap: 500
+
+results_dir: results/offline/full
+models_dir: models/monitor/full
+calibrators_dir: models/calibrators/full

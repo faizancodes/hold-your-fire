@@ -1,0 +1,50 @@
+{"id": "A00", "human_mode": "looping", "note": "touch.sqlfluffignore typo → cmd-not-found ×5, then lint. ×2"}
+{"id": "A01", "human_mode": "looping", "note": "same edit 125 → IndentationError ×3 at tail"}
+{"id": "A02", "human_mode": "patch_churn", "note": "varied edits, tests fail with DIFFERENT errors each time"}
+{"id": "A03", "human_mode": "looping", "note": "exact same edit 98:102 → same F821 ×8"}
+{"id": "A04", "human_mode": "patch_churn", "note": "edits + reproduce.py → TIMEOUT repeatedly, added busy-loop"}
+{"id": "A05", "human_mode": "patch_churn", "note": "permutes tuple fields, same PicklingError each test"}
+{"id": "A06", "human_mode": "environment_distraction", "note": "types Python (SparkSession) at bash prompt → syntax err ×3"}
+{"id": "A07", "human_mode": "patch_churn", "note": "iterative edits, errors evolve (F821→import→Indentation)"}
+{"id": "A08", "human_mode": "test_neglect", "note": "read→create→edit then submit, never ran a test"}
+{"id": "A09", "human_mode": "not_observable", "note": "5 steps, one failing edit in normal flow, risk 0.335"}
+{"id": "A10", "human_mode": "patch_churn", "note": "repeated edits lines 43-58, varied syntax errs, never tests"}
+{"id": "A11", "human_mode": "insufficient_context", "note": "references files that don't exist (base.py, settings.py)"}
+{"id": "A12", "human_mode": "environment_distraction", "note": "wget 404, search_dir on URL paths → not found ×7"}
+{"id": "A13", "human_mode": "patch_churn", "note": "edit→test on reproduce.py + Python-in-bash errors"}
+{"id": "A14", "human_mode": "looping", "note": "cat.gitignore typo → command not found ×9"}
+{"id": "A15", "human_mode": "patch_churn", "note": "varied edits to test harness, persistent tracebacks"}
+{"id": "A16", "human_mode": "insufficient_context", "note": "searches def parse_json (nonexistent) ×3, meandering"}
+{"id": "A17", "human_mode": "looping", "note": "identical paste edit → same SyntaxError ×3"}
+{"id": "A18", "human_mode": "insufficient_context", "note": "edits undefined BaseConfig, searches nonexistent names"}
+{"id": "A19", "human_mode": "insufficient_context", "note": "undefined NokiaSleepSummary, import fumbling, submit"}
+{"id": "A20", "human_mode": "environment_distraction", "note": "cmd-not-found, identical search 'generate' ×3, hunt test harness"}
+{"id": "A21", "human_mode": "insufficient_context", "note": "edits with undefined logging/os, exploring package"}
+{"id": "A22", "human_mode": "looping", "note": "oscillates two edits + same sceptre traceback ×6"}
+{"id": "A23", "human_mode": "looping", "note": "identical open→edit→test→ImportError cycle, risk 0.895"}
+{"id": "A24", "human_mode": "looping", "note": "identical search_dir 'stop' + repeated goto 192/402/719"}
+{"id": "A25", "human_mode": "looping", "note": "python reproduce.py → same AssertionError ×11, no edits between"}
+{"id": "A26", "human_mode": "insufficient_context", "note": "identical ls -F ×3 but opens many different files"}
+{"id": "A27", "human_mode": "patch_churn", "note": "permutes date string line 7, ignores real dt_obj error"}
+{"id": "A28", "human_mode": "not_observable", "note": "edit→test, last test clean, submit; risk 0.25"}
+{"id": "A29", "human_mode": "looping", "note": "edit <path> 1:7 wrong-syntax → Usage ×3"}
+{"id": "A30", "human_mode": "not_observable", "note": "repros run fine, searching for class def; risk-flagged but healthy"}
+{"id": "A31", "human_mode": "not_observable", "note": "targeted one-line edit + submit, risk 0.424"}
+{"id": "A32", "human_mode": "not_observable", "note": "F821s fixed, tests run clean, submit; risk 0.502"}
+{"id": "A33", "human_mode": "looping", "note": "tries PyVicareDevice.py (wrong case) via cat/open/find, ls shows real name"}
+{"id": "A34", "human_mode": "insufficient_context", "note": "task is 'townsend', agent works on unrelated test_snow"}
+{"id": "A35", "human_mode": "patch_churn", "note": "iterative import fixes (errors evolve) + Pillow/convert env"}
+{"id": "A36", "human_mode": "patch_churn", "note": "edits across files, test output unchanged, identical search ×2"}
+{"id": "A37", "human_mode": "patch_churn", "note": "destructively edits __init__.py, repeated near-identical → F821"}
+{"id": "A38", "human_mode": "looping", "note": "identical edit 55:96 → same IndentationError ×3"}
+{"id": "A39", "human_mode": "not_observable", "note": "builds impl+test, last test clean, submit; standalone-file approach"}
+{"id": "A40", "human_mode": "insufficient_context", "note": "read-only goto across many lines, searches nonexistent method"}
+{"id": "A41", "human_mode": "patch_churn", "note": "hardcodes if name=='bla' special-cases, persistent Traceback"}
+{"id": "A42", "human_mode": "looping", "note": "5× near-identical edit 6:56 no run between, cmd unregistered"}
+{"id": "A43", "human_mode": "patch_churn", "note": "varied recipe.yml edits, ansible output evolves ERROR→PLAY"}
+{"id": "A44", "human_mode": "looping", "note": "identical open→goto173→edit161→test cycle twice, output unchanged"}
+{"id": "A45", "human_mode": "looping", "note": "identical goto 211 ×5 read-loop, risk 0.895"}
+{"id": "A46", "human_mode": "submission_too_early", "note": "creates repro, runs pyflakes, submits at step 5 w/o touching source"}
+{"id": "A47", "human_mode": "patch_churn", "note": "edit 118:150 → unchanged output then IndentationError ×2"}
+{"id": "A48", "human_mode": "looping", "note": "identical edit 681:685 → same IndentationError ×12"}
+{"id": "A49", "human_mode": "not_observable", "note": "adds debug prints, tests succeed, evolving output (productive debugging)"}

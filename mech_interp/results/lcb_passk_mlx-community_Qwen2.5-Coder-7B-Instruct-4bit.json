@@ -1,0 +1,267 @@
+{
+  "repo": "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit",
+  "K": 12,
+  "temp": 0.8,
+  "n_problems": 16,
+  "n_greedy_fail": 9,
+  "n_reachable": 2,
+  "rows": [
+    {
+      "id": "abc387_a",
+      "difficulty": "easy",
+      "greedy": true,
+      "passk": true,
+      "n_solve": 12,
+      "K": 12,
+      "correct": [
+        "# Read input from standard input\nA, B = map(int, input().split())\n\n# Calculate the square of the sum\nresult = (A + B) ** 2\n\n# Print the result\nprint(result)",
+        "# Read input from standard input\nA, B = map(int, input().split())\n\n# Calculate the square of A + B\nresult = (A + B) ** 2\n\n# Print the result to standard output\nprint(result)",
+        "# Read input from standard input\nA, B = map(int, input().split())\n\n# Calculate the square of A + B\nresult = (A + B) ** 2\n\n# Print the result\nprint(result)",
+        "# Read input from standard input\nA, B = map(int, input().split())\n\n# Calculate the square of A + B\nresult = (A + B) ** 2\n\n# Print the result\nprint(result)"
+      ],
+      "incorrect": []
+    },
+    {
+      "id": "abc387_b",
+      "difficulty": "easy",
+      "greedy": false,
+      "passk": true,
+      "n_solve": 2,
+      "K": 12,
+      "correct": [
+        "X = int(input())\ntotal_sum = 0\ncount_X = 0\n\nfor i in range(1, 10):\n    for j in range(1, 10):\n        product = i * j\n        total_sum += product\n        if product == X:\n            count_X += 1\n\nresult = total_sum - count_X * X\nprint(result)",
+        "X = int(input())\ntotal_sum = 0\n\nfor i in range(1, 10):\n    for j in range(1, 10):\n        product = i * j\n        if product != X:\n            total_sum += product\n\nprint(total_sum)"
+      ],
+      "incorrect": [
+        "# Read the integer X from standard input\nX = int(input())\n\n# Initialize the sum of all integers in the 9x9 multiplication table\ntotal_sum = 0\n\n# Iterate over all rows and columns to calculate the sum of all integers in the grid\nfor i in range(1, 10):\n    for j in range(1, 10):\n        total_sum += i * j\n\n# If X is not in the grid, print the total sum\nif X not in {i * j for i in range(1, 10) for j in range(1, 10)}:\n    print(total_sum)\nelse:\n    # If X is in the grid, subtract X from the total sum\n    print(total_sum - X)",
+        "# Read the value of X from standard input\nX = int(input().strip())\n\n# Calculate the sum of all integers from 1 to 81\ntotal_sum = sum(range(1, 82))\n\n# Calculate the sum of all multiples of X that are less than or equal to 81\nsum_of_multiples = sum(x for x in range(X, 82, X))\n\n# Calculate the sum of integers that are not X\nsum_not_X = total_sum - sum_of_multiples\n\n# Print the result\nprint(sum_not_X)",
+        "# Read the value of X from standard input\nX = int(input())\n\n# Calculate the total sum of all integers in the 9x9 multiplication table\ntotal_sum = sum(i * j for i in range(1, 10) for j in range(1, 10))\n\n# Calculate the sum of the numbers that are equal to X\nsum_of_X = X * 9 if X <= 81 else 0\n\n# Calculate and print the sum of the integers that are not X\nprint(total_sum - sum_of_X)",
+        "X = int(input())\ntotal_sum = 0\ncount = 0\n\nfor i in range(1, 10):\n    for j in range(1, 10):\n        value = i * j\n        if value == X:\n            count += 1\n        else:\n            total_sum += value\n\nresult = total_sum - count * X\nprint(result)"
+      ]
+    },
+    {
+      "id": "abc388_a",
+      "difficulty": "easy",
+      "greedy": true,
+      "passk": true,
+      "n_solve": 12,
+      "K": 12,
+      "correct": [
+        "# Read the input string from standard input\nS = input().strip()\n\n# Extract the first character of the string\nfirst_char = S[0]\n\n# Concatenate the first character with \"UPC\"\nresult = first_char + \"UPC\"\n\n# Print the resulting string\nprint(result)",
+        "# Read the input string from standard input\nS = input()\n\n# Extract the first character of the string\nfirst_char = S[0]\n\n# Concatenate the first character with \"UPC\"\nresult = first_char + \"UPC\"\n\n# Print the resulting string\nprint(result)",
+        "s = input()\nprint(f\"{s[0]}UPC\")",
+        "# Read the input string from standard input\nS = input().strip()\n\n# Extract the first character of the string\nfirst_char = S[0]\n\n# Concatenate the first character with \"UPC\"\nresult = first_char + \"UPC\"\n\n# Print the resulting string\nprint(result)"
+      ],
+      "incorrect": []
+    },
+    {
+      "id": "abc388_b",
+      "difficulty": "easy",
+      "greedy": true,
+      "passk": true,
+      "n_solve": 10,
+      "K": 12,
+      "correct": [
+        "# Read input from standard input\nimport sys\ninput = sys.stdin.read\ndata = input().split()\n\n# Parse the input\nN = int(data[0])\nD = int(data[1])\nsnakes = []\nfor i in range(N):\n    T = int(data[2 + 2 * i])\n    L = int(data[3 + 2 * i])\n    snakes.append((T, L))\n\n# Calculate the weights for each k from 1 to D\nresults = []\nfor k in range(1, D + 1):\n    weights = []\n    for T, L in snakes:\n        weights.append(T * (L + k))\n    max_weight = max(weights)\n    results.append(max_weight)\n\n# Print the results\nfor result in results:\n    print(result)",
+        "N, D = map(int, input().split())\nsnakes = [tuple(map(int, input().split())) for _ in range(N)]\n\nmax_weights = []\n\nfor k in range(1, D + 1):\n    weights = []\n    for t, l in snakes:\n        weights.append((t * (l + k)))\n    max_weights.append(max(weights))\n\nfor weight in max_weights:\n    print(weight)",
+        "# Read input from standard input\nimport sys\ninput = sys.stdin.read\ndata = input().split()\n\n# Parse the input\nN = int(data[0])\nD = int(data[1])\nsnakes = []\n\nindex = 2\nfor _ in range(N):\n    T = int(data[index])\n    L = int(data[index + 1])\n    snakes.append((T, L))\n    index += 2\n\n# Process each value of k from 1 to D\nresults = []\nfor k in range(1, D + 1):\n    new_weights = [T * (L + k) for T, L in snakes]\n    heaviest_weight = max(new_weights)\n    results.append(heaviest_weight)\n\n# Print the results\nfor result in results:\n    print(result)",
+        "# Read input\nimport sys\ninput = sys.stdin.read\ndata = input().split()\n\nN = int(data[0])\nD = int(data[1])\nsnakes = []\n\nindex = 2\nfor _ in range(N):\n    T = int(data[index])\n    L = int(data[index + 1])\n    snakes.append((T, L))\n    index += 2\n\n# Process each k from 1 to D\nresults = []\nfor k in range(1, D + 1):\n    new_weights = [(T * (L + k)) for T, L in snakes]\n    max_weight = max(new_weights)\n    results.append(max_weight)\n\n# Print results\nfor result in results:\n    print(result)"
+      ],
+      "incorrect": [
+        "import sys\ninput = sys.stdin.read\ndata = input().split()\n\nN = int(data[0])\nD = int(data[1])\n\nsnakes = []\nfor i in range(N):\n    T = int(data[2 + 2 * i])\n    L = int(data[3 + 2 * i])\n    snakes.append((T, L))\n\nresults = []\nfor k in range(D):\n    new_weights = []\n    for T, L in snakes:\n        new_weight = T * (L + k)\n        new_weights.append(new_weight)\n    results.append(max(new_weights))\n\nfor result in results:\n    print(result)",
+        "N, D = map(int, input().split())\nsnakes = [tuple(map(int, input().split())) for _ in range(N)]\n\nmax_weights = []\nfor k in range(D):\n    weights = [T * (L + k) for T, L in snakes]\n    max_weights.append(max(weights))\n\nfor weight in max_weights:\n    print(weight)"
+      ]
+    },
+    {
+      "id": "abc389_a",
+      "difficulty": "easy",
+      "greedy": true,
+      "passk": true,
+      "n_solve": 12,
+      "K": 12,
+      "correct": [
+        "# Read the input string from standard input\nS = input().strip()\n\n# Extract the two digits from the string\nfirst_digit = int(S[0])\nsecond_digit = int(S[2])\n\n# Calculate the product of the two digits\nproduct = first_digit * second_digit\n\n# Print the product as the output\nprint(product)",
+        "# Read the input string from standard input\nS = input()\n\n# Extract the digits from the string\ndigit1 = int(S[0])\ndigit2 = int(S[2])\n\n# Calculate the product of the two digits\nproduct = digit1 * digit2\n\n# Print the product as an integer\nprint(product)",
+        "# Read the input string from standard input\nS = input().strip()\n\n# Extract the two digits from the string\nnum1 = int(S[0])\nnum2 = int(S[2])\n\n# Calculate the product of the two digits\nproduct = num1 * num2\n\n# Print the product as the output\nprint(product)",
+        "# Read the input string\nS = input().strip()\n\n# Extract the two digits from the string\nnum1 = int(S[0])\nnum2 = int(S[2])\n\n# Calculate the product of the two digits\nproduct = num1 * num2\n\n# Print the product\nprint(product)"
+      ],
+      "incorrect": []
+    },
+    {
+      "id": "abc389_b",
+      "difficulty": "easy",
+      "greedy": false,
+      "passk": true,
+      "n_solve": 3,
+      "K": 12,
+      "correct": [
+        "import math\n\n# Read input from standard input\nX = int(input())\n\n# Initialize the possible value of N\nN = 1\n\n# Increment N until N! is greater than or equal to X\nwhile math.factorial(N) < X:\n    N += 1\n\n# Print the result\nprint(N)",
+        "import math\n\n# Read input from standard input\nX = int(input())\n\n# Find the positive integer N such that N! = X\nN = 1\nwhile math.factorial(N) < X:\n    N += 1\nwhile math.factorial(N) != X:\n    if math.factorial(N) > X:\n        N -= 1\n        break\n    N += 1\n\n# Print the answer\nprint(N)",
+        "import math\n\n# Read the input\nX = int(input())\n\n# Find the positive integer N such that N! = X\nN = 1\nwhile math.factorial(N) < X:\n    N += 1\nwhile math.factorial(N) > X:\n    N -= 1\n\n# Print the result\nprint(N)"
+      ],
+      "incorrect": [
+        "import math\n\nX = int(input())\nN = math.isqrt(X)\nwhile math.factorial(N) < X:\n    N += 1\nprint(N)",
+        "import math\n\n# Read input from standard input\nX = int(input())\n\n# Find the positive integer N such that N! = X\nN = math.isqrt(X)\n\n# Ensure N! is exactly equal to X\nif math.factorial(N) == X:\n    print(N)\nelse:\n    print(N + 1)",
+        "import math\n\nX = int(input())\nN = round(math.log(X, math.e) / math.log(2, math.e))\nprint(N)",
+        "import math\n\n# Read input from standard input\nX = int(input().strip())\n\n# Calculate the integer N such that N! = X\nN = math.isqrt(X * 2)  # Start with an approximation for the square root of 2X\n\n# Adjust N to find the exact factorial\nwhile math.factorial(N) < X:\n    N += 1\nwhile math.factorial(N) > X:\n    N -= 1\n\n# Print the result\nprint(N)"
+      ]
+    },
+    {
+      "id": "abc390_a",
+      "difficulty": "easy",
+      "greedy": true,
+      "passk": true,
+      "n_solve": 5,
+      "K": 12,
+      "correct": [
+        "def can_be_sorted_by_one_swap(A):\n    n = len(A)\n    count = 0\n    \n    # Count the number of out-of-order pairs\n    for i in range(n - 1):\n        if A[i] > A[i + 1]:\n            count += 1\n            index = i\n    \n    # If there are no out-of-order pairs, the array is already sorted\n    if count == 0:\n        return \"No\"\n    \n    # If there is exactly one out-of-order pair, check if swapping it fixes the array\n    if count == 1:\n        # Swap the out-of-order pair\n        A[index], A[index + 1] = A[index + 1], A[index]\n        # Check if the array is sorted after the swap\n        for i in range(n - 1):\n            if A[i] > A[i + 1]:\n                return \"No\"\n        return \"Yes\"\n    \n    return \"No\"\n\n# Read input from standard input\nA = list(map(int, input().split()))\n\n# Print the result\nprint(can_be_sorted_by_one_swap(A))",
+        "def can_be_sorted_by_one_swap(arr):\n    # Find the number of inversions in the array\n    inversions = 0\n    for i in range(len(arr)):\n        for j in range(i + 1, len(arr)):\n            if arr[i] > arr[j]:\n                inversions += 1\n    \n    # If there is exactly one inversion, it can be sorted by one swap\n    return inversions == 1\n\n# Read input from standard input\narr = list(map(int, input().split()))\n\n# Check if the array can be sorted by exactly one swap\nif can_be_sorted_by_one_swap(arr):\n    print(\"Yes\")\nelse:\n    print(\"No\")",
+        "# Read input from standard input\nA = list(map(int, input().split()))\n\n# Check if the array is already sorted\nif A == sorted(A):\n    print(\"No\")\n    exit()\n\n# Check all possible adjacent swaps\nfor i in range(4):\n    A[i], A[i + 1] = A[i + 1], A[i]\n    if A == sorted(A):\n        print(\"Yes\")\n        exit()\n    A[i], A[i + 1] = A[i + 1], A[i]\n\n# If no valid swap is found\nprint(\"No\")",
+        "def can_be_sorted_by_one_swap(arr):\n    n = len(arr)\n    if n != 5:\n        return False\n    \n    # Find the number of inversions (out of order pairs)\n    inversions = 0\n    for i in range(n):\n        for j in range(i + 1, n):\n            if arr[i] > arr[j]:\n                inversions += 1\n    \n    # If there is exactly one inversion, it can be sorted by one swap\n    return inversions == 1\n\n# Read input from standard input\nA = list(map(int, input().split()))\n\n# Determine if A can be sorted by exactly one swap\nresult = \"Yes\" if can_be_sorted_by_one_swap(A) else \"No\"\n\n# Print the result to standard output\nprint(result)"
+      ],
+      "incorrect": [
+        "def can_be_sorted_by_one_swap(A):\n    for i in range(1, len(A)):\n        if A[i] < A[i - 1]:\n            if i == 1:\n                if A[i] < A[2]:\n                    A[i], A[i - 1] = A[i - 1], A[i]\n                    return True\n            elif i == len(A) - 1:\n                if A[i] > A[i - 2]:\n                    A[i], A[i - 1] = A[i - 1], A[i]\n                    return True\n            else:\n                if A[i] > A[i - 2] and A[i] < A[i + 1]:\n                    A[i], A[i - 1] = A[i - 1], A[i]\n                    return True\n    return False\n\nA = list(map(int, input().strip().split()))\nif can_be_sorted_by_one_swap(A):\n    print(\"Yes\")\nelse:\n    print(\"No\")",
+        "def can_be_sorted_by_one_swap(arr):\n    n = len(arr)\n    if n != 5:\n        return False\n\n    # Find the number of inversions where a[i] > a[j] and i < j\n    inversions = 0\n    for i in range(n):\n        for j in range(i + 1, n):\n            if arr[i] > arr[j]:\n                inversions += 1\n\n    # Check if the array can be sorted by exactly one swap\n    if inversions == 2:\n        return True\n    return False\n\n# Read input from standard input\ninput_line = input().strip()\nA = list(map(int, input_line.split()))\n\n# Check if the array can be sorted by exactly one swap\nresult = \"Yes\" if can_be_sorted_by_one_swap(A) else \"No\"\n\n# Print the result to standard output\nprint(result)",
+        "python\ndef can_be_sorted_by_one_swap(arr):\n    n = len(arr)\n    count = 0\n    \n    for i in range(1, n):\n        if arr[i] < arr[i - 1]:\n            count += 1\n    \n    if count == 0:\n        return False\n    elif count == 1:\n        if n == 5:\n            if arr[0] == 1 and arr[1] == 2 and arr[2] == 3 and arr[3] == 4 and arr[4] == 5:\n                return False\n            if arr[0] == 1 and arr[1] == 2 and arr[2] == 3 and arr[3] == 5 and arr[4] == 4:\n                return False\n            if arr[0] == 1 and arr[1] == 2 and arr[2] == 4 and arr[3] == 3 and arr[4] == 5:\n                return False\n            if arr[0] == 1 and arr[1] == 3 and arr[2] == 2 and arr[3] == 4 and arr[4] == 5:\n                return False\n            if arr[0] == 1 and arr[1] == 3 and arr[2] == 4 and arr[3] == 2 and arr[4] == 5:\n                return False\n            if arr[0] == 1 and arr[1] == 4 and arr[2] == 3 and arr[3] == 2 and arr[4] == 5:\n                return False\n            if arr[0] == 2 and arr[1] == 1 and arr[2] == 3 and arr[3] == 4 and arr[4] == 5:\n                return False\n            if arr[0] == 2 and arr[1] == 1 and arr[2] == 3 and arr[3] == 5 and arr[4] == 4",
+        "def can_sort_with_one_swap(A):\n    n = len(A)\n    swaps = 0\n    for i in range(n-1):\n        if A[i] > A[i+1]:\n            swaps += 1\n            if swaps > 1:\n                return \"No\"\n    if swaps == 1:\n        return \"Yes\"\n    return \"No\"\n\n# Read input from standard input\nA = list(map(int, input().split()))\n\n# Print the result\nprint(can_sort_with_one_swap(A))"
+      ]
+    },
+    {
+      "id": "abc390_b",
+      "difficulty": "easy",
+      "greedy": true,
+      "passk": true,
+      "n_solve": 11,
+      "K": 12,
+      "correct": [
+        "import sys\ninput = sys.stdin.read\ndata = input().split()\n\nN = int(data[0])\nA = list(map(int, data[1:]))\n\n# Check if the sequence is a geometric progression\nif N == 1:\n    print(\"Yes\")\nelse:\n    ratio = A[1] / float(A[0])\n    is_geometric = all(A[i] == A[0] * ratio**i for i in range(N))\n    print(\"Yes\" if is_geometric else \"No\")",
+        "import sys\ninput = sys.stdin.read\ndata = input().split()\n\nN = int(data[0])\nA = list(map(int, data[1:]))\n\n# Check if the sequence is a geometric progression\nif N == 1:\n    print(\"Yes\")\nelse:\n    ratio = A[1] / A[0]\n    is_geometric = all(A[i] / A[i - 1] == ratio for i in range(2, N))\n    if is_geometric:\n        print(\"Yes\")\n    else:\n        print(\"No\")",
+        "N = int(input())\nA = list(map(int, input().split()))\n\n# Check if the sequence is a geometric progression\nif len(A) == 2:\n    ratio = A[1] / A[0]\nelse:\n    ratios = [A[i+1] / A[i] for i in range(len(A)-1)]\n    ratio = ratios[0]\n    if not all(r == ratio for r in ratios):\n        ratio = None\n\nresult = \"Yes\" if ratio is not None else \"No\"\nprint(result)",
+        "import sys\ninput = sys.stdin.read\ndata = input().split()\n\nN = int(data[0])\nA = list(map(int, data[1:]))\n\n# Check if the sequence is a geometric progression\nif N <= 1:\n    print(\"Yes\")\nelse:\n    ratio = A[1] / float(A[0])\n    is_geometric = all(A[i] / float(A[i-1]) == ratio for i in range(2, N))\n    if is_geometric:\n        print(\"Yes\")\n    else:\n        print(\"No\")"
+      ],
+      "incorrect": [
+        "# Read input\nimport sys\ninput = sys.stdin.read\ndata = input().split()\n\n# Parse input\nN = int(data[0])\nA = list(map(int, data[1:]))\n\n# Check if the sequence is a geometric progression\nis_geometric = all(A[i] != 0 and A[i+1] % A[i] == 0 for i in range(N-1))\n\n# Print result\nprint(\"Yes\" if is_geometric else \"No\")"
+      ]
+    },
+    {
+      "id": "abc387_c",
+      "difficulty": "medium",
+      "greedy": false,
+      "passk": false,
+      "n_solve": 0,
+      "K": 12,
+      "correct": [],
+      "incorrect": [
+        "def is_snake_number(num):\n    num_str = str(num)\n    max_digit = max(int(digit) for digit in num_str)\n    for digit in num_str:\n        if int(digit) == max_digit and num_str.index(digit) != 0:\n            return False\n    return True\n\ndef count_snake_numbers(L, R):\n    count = 0\n    for num in range(L, R + 1):\n        if is_snake_number(num):\n            count += 1\n    return count\n\nL, R = map(int, input().split())\nprint(count_snake_numbers(L, R))",
+        "def is_snake_number(n):\n    digits = [int(d) for d in str(n)]\n    max_digit = max(digits)\n    return any(digit == max_digit for digit in digits) and all(digit < max_digit for digit in digits if digit != 0)\n\ndef count_snake_numbers(L, R):\n    count = 0\n    for num in range(L, R + 1):\n        if is_snake_number(num):\n            count += 1\n    return count\n\n# Read input from standard input\nL, R = map(int, input().split())\n\n# Print the result\nprint(count_snake_numbers(L, R))",
+        "def is_snake_number(n):\n    digits = [int(d) for d in str(n)]\n    top_digit = max(digits)\n    for d in digits:\n        if d == top_digit:\n            digits.remove(d)\n            break\n    for d in digits:\n        if d >= top_digit:\n            return False\n    return True\n\ndef count_snake_numbers(L, R):\n    count = 0\n    for i in range(L, R + 1):\n        if is_snake_number(i):\n            count += 1\n    return count\n\nL, R = map(int, input().split())\nprint(count_snake_numbers(L, R))",
+        "def is_snake_number(n):\n    digits = [int(d) for d in str(n)]\n    max_digit = max(digits)\n    return all(digit <= max_digit for digit in digits if digit != max_digit)\n\ndef count_snake_numbers(L, R):\n    count = 0\n    for i in range(L, R + 1):\n        if is_snake_number(i):\n            count += 1\n    return count\n\nL, R = map(int, input().split())\nprint(count_snake_numbers(L, R))"
+      ]
+    },
+    {
+      "id": "abc388_c",
+      "difficulty": "medium",
+      "greedy": false,
+      "passk": false,
+      "n_solve": 0,
+      "K": 12,
+      "correct": [],
+      "incorrect": [
+        "from bisect import bisect_right\n\n# Read input\nimport sys\ninput = sys.stdin.read\ndata = input().split()\n\n# Number of mochi\nN = int(data[0])\n\n# Sizes of mochi\nA = list(map(int, data[1:]))\n\n# Initialize count of kagamimochi\ncount = 0\n\n# Iterate over each pair of mochi\nfor i in range(N):\n    for j in range(i + 1, N):\n        # Check if A[j] is at least twice as large as A[i]\n        if A[j] >= 2 * A[i]:\n            # Count all valid pairs (i, j) that satisfy the condition\n            count += 1\n\n# Print the number of different kinds of kagamimochi\nprint(count)",
+        "def main():\n    import sys\n    input = sys.stdin.read\n    data = input().split()\n    \n    N = int(data[0])\n    A = list(map(int, data[1:]))\n    \n    count = 0\n    for i in range(N):\n        for j in range(i + 1, N):\n            if A[j] >= A[i] * 2:\n                break\n            count += 1\n    \n    print(count)\n\nif __name__ == \"__main__\":\n    main()",
+        "N = int(input())\nA = list(map(int, input().split()))\n\ncount = 0\n\nfor i in range(N):\n    for j in range(i + 1, N):\n        if A[j] >= A[i] * 2:\n            count += 1\n\nprint(count)",
+        "def count_kagamimochi(N, A):\n    count = 0\n    l = 0\n    for i in range(N):\n        while l < i and A[i] > A[l] * 2:\n            l += 1\n        count += i - l\n    return count\n\n# Read input\nN = int(input())\nA = list(map(int, input().split()))\n\n# Count and print the number of different kinds of kagamimochi\nprint(count_kagamimochi(N, A))"
+      ]
+    },
+    {
+      "id": "abc388_d",
+      "difficulty": "medium",
+      "greedy": false,
+      "passk": false,
+      "n_solve": 0,
+      "K": 12,
+      "correct": [],
+      "incorrect": [
+        "# Read input from standard input\nimport sys\ninput = sys.stdin.read\ndata = input().split()\n\n# Number of aliens\nN = int(data[0])\n\n# Initial number of stones for each alien\nA = list(map(int, data[1:]))\n\n# Result array to store the number of stones after N years\nB = [0] * N\n\n# Process each year\nfor i in range(1, N + 1):\n    # If the i-th alien has stones, distribute them to all older adults\n    if A[i-1] > 0:\n        for j in range(i-2, -1, -1):\n            B[j] += 1\n\n# Print the result\nprint(\" \".join(map(str, B)))",
+        "import sys\ninput = sys.stdin.read\ndata = input().split()\n\nN = int(data[0])\nA = list(map(int, data[1:]))\n\n# Initialize the array to store the number of stones each alien has after N years\nB = [0] * N\n\n# Iterate over each year from 1 to N\nfor i in range(1, N + 1):\n    # Count the number of adults who have at least one stone\n    adults_with_stones = sum(1 for a in A[i-1:] if a > 0)\n    # Distribute the stones from adults to the i-th alien\n    B[i-1] += adults_with_stones\n    # Decrease the number of stones each adult has by 1\n    A[i-1:] = [max(a - 1, 0) for a in A[i-1:]]\n\n# Print the final number of stones each alien has\nprint(\" \".join(map(str, B)))",
+        "N = int(input())\nA = list(map(int, input().split()))\n\n# Initialize the final array B with the same values as A\nB = A[:]\n\n# Simulate the process for each year\nfor i in range(1, N):\n    # Count the number of stones that are greater than 0\n    count = sum(1 for x in B if x > 0)\n    # Each adult gives one stone to the next alien\n    for j in range(i, N):\n        if B[j] > 0:\n            B[j] -= 1\n            B[(j + 1) % N] += 1\n        else:\n            break\n\n# Print the final array B\nprint(' '.join(map(str, B)))",
+        "def stone_distribution(N, A):\n    adults = []\n    for i in range(N):\n        if A[i] > 0:\n            adults.append(i)\n    for year in range(1, N + 1):\n        if year < len(adults):\n            stone = adults.pop(0)\n            A[stone] -= 1\n            if stone + year < N:\n                A[stone + year] += 1\n        else:\n            break\n    return A\n\nN = int(input())\nA = list(map(int, input().split()))\nresult = stone_distribution(N, A)\nprint(' '.join(map(str, result)))"
+      ]
+    },
+    {
+      "id": "abc389_d",
+      "difficulty": "medium",
+      "greedy": false,
+      "passk": false,
+      "n_solve": 0,
+      "K": 12,
+      "correct": [],
+      "incorrect": [
+        "import math\n\ndef count_squares_inside_circle(R):\n    count = 0\n    for i in range(-int(R), int(R) + 1):\n        for j in range(-int(R), int(R) + 1):\n            if (i + 0.5)**2 + (j + 0.5)**2 <= R**2 and (i - 0.5)**2 + (j - 0.5)**2 <= R**2 and (i + 0.5)**2 + (j - 0.5)**2 <= R**2 and (i - 0.5)**2 + (j + 0.5)**2 <= R**2:\n                count += 1\n    return count\n\nR = int(input())\nprint(count_squares_inside_circle(R))",
+        "import sys\nimport math\n\n# Read the radius from standard input\nR = int(sys.stdin.readline().strip())\n\n# Initialize the count of squares\ncount = 0\n\n# Iterate over all possible integer pairs (i, j)\nfor i in range(-R, R + 1):\n    for j in range(-R, R + 1):\n        # Check if all four corners of the square are inside the circle\n        if (i + 0.5)**2 + (j + 0.5)**2 <= R**2 and \\\n           (i + 0.5)**2 + (j - 0.5)**2 <= R**2 and \\\n           (i - 0.5)**2 + (j + 0.5)**2 <= R**2 and \\\n           (i - 0.5)**2 + (j - 0.5)**2 <= R**2:\n            count += 1\n\n# Print the count of squares\nprint(count)",
+        "import math\n\ndef count_squares(R):\n    count = 0\n    R2 = R * R\n    for i in range(-R, R + 1):\n        for j in range(-R, R + 1):\n            dx = i + 0.5\n            dy = j + 0.5\n            if dx * dx + dy * dy <= R2:\n                dx = i - 0.5\n                if dx * dx + dy * dy <= R2:\n                    dx = i + 0.5\n                    dy = j - 0.5\n                    if dx * dx + dy * dy <= R2:\n                        dx = i - 0.5\n                        if dx * dx + dy * dy <= R2:\n                            count += 1\n    return count\n\n# Read input from standard input\nR = int(input().strip())\n\n# Print the result\nprint(count_squares(R))",
+        "import math\n\ndef count_squares_in_circle(R):\n    count = 0\n    for i in range(-R, R + 1):\n        for j in range(-R, R + 1):\n            if all(math.sqrt((x + 0.5) ** 2 + (y + 0.5) ** 2) <= R for x, y in [(i, j), (i, j + 1), (i + 1, j), (i + 1, j + 1)]):\n                count += 1\n    return count\n\n# Read input\nR = int(input())\n\n# Calculate and print the result\nprint(count_squares_in_circle(R))"
+      ]
+    },
+    {
+      "id": "abc390_c",
+      "difficulty": "medium",
+      "greedy": true,
+      "passk": false,
+      "n_solve": 0,
+      "K": 12,
+      "correct": [],
+      "incorrect": [
+        "def can_form_rectangle(H, W, grid):\n    black_cells = []\n    for i in range(H):\n        for j in range(W):\n            if grid[i][j] == '#':\n                black_cells.append((i, j))\n            elif grid[i][j] == '?':\n                black_cells.append((i, j))\n\n    if len(black_cells) == 0:\n        return \"Yes\"\n\n    black_cells.sort()\n\n    min_i = min(black_cells, key=lambda x: x[0])[0]\n    max_i = max(black_cells, key=lambda x: x[0])[0]\n    min_j = min(black_cells, key=lambda x: x[1])[1]\n    max_j = max(black_cells, key=lambda x: x[1])[1]\n\n    for i in range(H):\n        for j in range(W):\n            if min_i <= i <= max_i and min_j <= j <= max_j:\n                if grid[i][j] == '?':\n                    return \"No\"\n            else:\n                if grid[i][j] == '#':\n                    return \"No\"\n\n    return \"Yes\"\n\nH, W = map(int, input().split())\ngrid = [input().strip() for _ in range(H)]\n\nprint(can_form_rectangle(H, W, grid))",
+        "def can_form_rectangle(H, W, grid):\n    black_cells = []\n    \n    # Find all black cells\n    for i in range(H):\n        for j in range(W):\n            if grid[i][j] == '#':\n                black_cells.append((i, j))\n    \n    if len(black_cells) == 0:\n        return \"Yes\"\n    \n    # Find the minimum and maximum row and column indices of black cells\n    min_row = min(black_cells, key=lambda x: x[0])[0]\n    max_row = max(black_cells, key=lambda x: x[0])[0]\n    min_col = min(black_cells, key=lambda x: x[1])[1]\n    max_col = max(black_cells, key=lambda x: x[1])[1]\n    \n    # Check if all cells in the rectangle formed by (min_row, min_col) and (max_row, max_col) are black\n    for i in range(min_row, max_row + 1):\n        for j in range(min_col, max_col + 1):\n            if grid[i][j] != '#' and grid[i][j] != '?':\n                return \"No\"\n    \n    # Check if all cells outside the rectangle are white\n    for i in range(H):\n        for j in range(W):\n            if (i < min_row or i > max_row or j < min_col or j > max_col) and grid[i][j] != '.':\n                return \"No\"\n    \n    return \"Yes\"\n\n# Read input\nH, W = map(int, input().split())\ngrid = [input().strip() for _ in range(H)]\n\n# Output the result\nprint(can_form_rectangle(H, W, grid))",
+        "import sys\n\ndef main():\n    input = sys.stdin.read\n    data = input().split()\n    \n    H = int(data[0])\n    W = int(data[1])\n    grid = data[2:]\n    \n    # Find the top-left corner of the rectangle\n    top = H\n    left = W\n    for i in range(H):\n        for j in range(W):\n            if grid[i][j] == '#':\n                top = min(top, i)\n                left = min(left, j)\n    \n    # Paint the first black cell found as the top-left corner of the rectangle\n    for i in range(H):\n        for j in range(W):\n            if grid[i][j] == '#' and (i, j) == (top, left):\n                grid[i] = grid[i][:j] + 'B' + grid[i][j+1:]\n                break\n        if grid[i][left] == 'B':\n            break\n    \n    # Check if the black cells can form a rectangle\n    for i in range(top, H):\n        for j in range(W):\n            if grid[i][j] == '?':\n                if grid[top][j] != 'B' or grid[i][left] != 'B':\n                    print(\"No\")\n                    return\n    print(\"Yes\")\n\nif __name__ == \"__main__\":\n    main()",
+        "def can_form_rectangle(grid):\n    H = len(grid)\n    W = len(grid[0])\n    \n    # Find the coordinates of all black cells\n    black_cells = []\n    for i in range(H):\n        for j in range(W):\n            if grid[i][j] == '#':\n                black_cells.append((i, j))\n    \n    # Sort black cells by their row and then by their column\n    black_cells.sort()\n    \n    # Try to find the top-left and bottom-right corners of the rectangle\n    top_left = None\n    bottom_right = None\n    for i in range(len(black_cells)):\n        for j in range(i + 1, len(black_cells)):\n            if black_cells[i][0] == black_cells[j][0] or black_cells[i][1] == black_cells[j][1]:\n                top_left = black_cells[i] if black_cells[i][0] < black_cells[j][0] or black_cells[i][1] < black_cells[j][1] else black_cells[j]\n                bottom_right = black_cells[i] if black_cells[i][0] > black_cells[j][0] or black_cells[i][1] > black_cells[j][1] else black_cells[j]\n                break\n        if bottom_right is not None:\n            break\n    \n    # Check if we have found a valid rectangle\n    if top_left is not None and bottom_right is not None:\n        for i in range(top_left[0], bottom_right[0] + 1):\n            for j in range(top_left[1], bottom_right[1] + 1):\n                if (i, j) not in black_cells:\n                    return 'No'\n        return 'Yes'\n    else:\n        return 'No'\n\n# Read input\nH, W = map(int, input().split())\ngrid = [input() for _ in range(H)]\n\n# Output the result\nprint(can_form_rectangle(grid))"
+      ]
+    },
+    {
+      "id": "abc390_d",
+      "difficulty": "medium",
+      "greedy": false,
+      "passk": false,
+      "n_solve": 0,
+      "K": 12,
+      "correct": [],
+      "incorrect": [
+        "from itertools import combinations\n\ndef count_possible_xor_values(N, A):\n    # Generate all possible xor values\n    possible_values = set([0])\n    for i in range(1, N + 1):\n        possible_values |= {x ^ A[i-1] for x in possible_values}\n        possible_values |= {x ^ A[i-1] ^ A[j-1] for x in possible_values for j in range(i + 1, N + 1)}\n        possible_values |= {x ^ A[i-1] ^ A[j-1] ^ A[k-1] for x in possible_values for j in range(i + 1, N + 1) for k in range(j + 1, N + 1)}\n        # Continue this pattern up to N+1 elements\n    return len(possible_values)\n\n# Read input from standard input\nN = int(input().strip())\nA = list(map(int, input().strip().split()))\n\n# Calculate the number of different possible values for the XOR of the final numbers of stones in all bags\nresult = count_possible_xor_values(N, A)\n\n# Print the result to standard output\nprint(result)",
+        "from itertools import combinations\n\ndef possible_xor_values(N, A):\n    # Generate all possible subsets of A\n    subsets = []\n    for r in range(1, N + 1):\n        subsets.extend(combinations(A, r))\n    \n    # Calculate the XOR for each subset\n    xor_values = set()\n    for subset in subsets:\n        xor = 0\n        for num in subset:\n            xor ^= num\n        xor_values.add(xor)\n    \n    # Calculate the XOR of the entire array A\n    overall_xor = 0\n    for num in A:\n        overall_xor ^= num\n    \n    # The possible values for B_1 \u2295 B_2 \u2295 ... \u2295 B_N are the XOR of the overall XOR with each unique subset XOR\n    possible_values = set()\n    for xor in xor_values:\n        possible_values.add(overall_xor ^ xor)\n    \n    return len(possible_values)\n\n# Read input\nN = int(input())\nA = list(map(int, input().split()))\n\n# Calculate and print the result\nresult = possible_xor_values(N, A)\nprint(result)",
+        "from typing import List\n\ndef count_possible_xor_values(N: int, A: List[int]) -> int:\n    # The XOR of all elements in A is a fixed value\n    fixed_xor = 0\n    for a in A:\n        fixed_xor ^= a\n    \n    # The possible values of B1 ^ B2 ^ ... ^ BN are the possible subsets of A\n    # Each subset's XOR value combined with the fixed_xor will give a unique result\n    # The number of subsets of A is 2^N\n    return 1 << (N - 1) if fixed_xor == 0 else (1 << N)\n\n# Read input\nN = int(input())\nA = list(map(int, input().split()))\n\n# Calculate and print the result\nresult = count_possible_xor_values(N, A)\nprint(result)",
+        "def count_possible_xor_values(N, A):\n    from functools import reduce\n    from operator import xor\n    \n    # If there is only one bag, the XOR value is simply A[0]\n    if N == 1:\n        return 1\n    \n    # Calculate the XOR of all initial values\n    initial_xor = reduce(xor, A)\n    \n    # The possible XOR values after any number of operations\n    # are the values that can be obtained by removing any subset of A from the initial XOR\n    # This is equivalent to the powers of 2 that are less than or equal to the initial XOR\n    possible_values = {initial_xor}\n    for i in range(1, N):\n        possible_values |= {initial_xor ^ (1 << i)}\n    \n    return len(possible_values)\n\n# Read input\nN = int(input())\nA = list(map(int, input().split()))\n\n# Output the result\nprint(count_possible_xor_values(N, A))"
+      ]
+    },
+    {
+      "id": "abc391_d",
+      "difficulty": "medium",
+      "greedy": false,
+      "passk": false,
+      "n_solve": 0,
+      "K": 12,
+      "correct": [],
+      "incorrect": [
+        "from collections import defaultdict\n\ndef simulate_blocks(N, W, blocks, Q, queries):\n    # Initialize the grid and simulate the movement of blocks\n    grid = defaultdict(set)\n    for x, y in blocks:\n        grid[y].add(x)\n    \n    results = []\n    for T, A in queries:\n        current_time = T\n        while current_time < T + 0.5:\n            # Remove blocks from the bottom row if the entire bottom row is filled\n            while grid[1]:\n                block = min(grid[1])\n                grid[1].remove(block)\n                if block in grid[2]:\n                    grid[2].remove(block)\n            \n            # Move blocks one cell downward if possible\n            for y in range(2, 10**9 + 1):\n                if y in grid:\n                    for x in grid[y]:\n                        if y + 1 not in grid or x not in grid[y + 1]:\n                            grid[y + 1].add(x)\n                            grid[y].remove(x)\n            \n            current_time += 1\n        \n        # Check if block A exists at time T + 0.5\n        if A in grid[T + 1]:\n            results.append(\"Yes\")\n        else:\n            results.append(\"No\")\n    \n    return results\n\n# Read input from standard input\nN, W = map(int, input().split())\nblocks = [tuple(map(int, input().split())) for _ in range(N)]\nQ = int(input())\nqueries = [tuple(map(int, input().split())) for _ in range(Q)]\n\n# Get the results\nresults = simulate_blocks(N, W, blocks, Q, queries)\n\n# Print the results to standard output\nfor result in results:\n    print(result)",
+        "import sys\ninput = sys.stdin.read\ndata = input().split()\n\nN = int(data[0])\nW = int(data[1])\nblocks = [(int(data[2 + 2 * i]) - 1, int(data[3 + 2 * i]) - 1) for i in range(N)]\nQ = int(data[2 * N + 2])\nqueries = [(int(data[2 * N + 4 + 2 * j]) - 1, int(data[2 * N + 5 + 2 * j])) for j in range(Q)]\n\nfor t, a in queries:\n    x, y = blocks[a]\n    fall_time = (y - 1) * (W - 1)\n    if t >= fall_time:\n        if t - fall_time >= x - 1:\n            print(\"Yes\")\n        else:\n            print(\"No\")\n    else:\n        print(\"Yes\")",
+        "python\nfrom collections import defaultdict\n\n# Read input from standard input\nimport sys\ninput = sys.stdin.read\ndata = input().split()\n\n# Parse the input\nN = int(data[0])\nW = int(data[1])\nblocks = []\nindex = 2\nfor _ in range(N):\n    X = int(data[index])\n    Y = int(data[index + 1])\n    blocks.append((X, Y))\n    index += 2\n\nQ = int(data[index])\nqueries = []\nindex += 1\nfor _ in range(Q):\n    T = int(data[index])\n    A = int(data[index + 1])\n    queries.append((T, A))\n    index += 2\n\n# Function to simulate the blocks' movement\ndef simulate_blocks(blocks, Q, T, A):\n    # Dictionary to store the lowest position of each column\n    lowest_positions = {}\n    for X, Y in blocks:\n        if X in lowest_positions:\n            lowest_positions[X] = min(lowest_positions[X], Y)\n        else:\n            lowest_positions[X] = Y\n\n    # Process each query\n    results = []\n    for t in range(T):\n        # Remove blocks in the bottom row if the entire bottom row is filled\n        bottom_row = {x for x, y in blocks if y == 1}\n        if len(bottom_row) == W:\n            blocks = [block for block in blocks if block not in bottom_row]\n\n        # Move blocks downward\n        new_blocks = []\n        for X, Y in blocks:\n            if Y == 1 or (X in lowest_positions and lowest_positions[X] == Y - 1):\n                new_blocks.append((X, Y))\n            else:\n                new_blocks.append((X, Y + 1))\n        blocks = new_blocks\n\n        # Update the lowest positions\n        for X, Y in blocks:\n            if X in lowest_positions:\n                lowest_positions[X] = min(lowest_positions[X], Y)\n            else:\n                lowest_positions[X] = Y\n\n    # Check if block A exists at time T + 0.5\n    if A in [X for",
+        "python\nclass Grid:\n    def __init__(self, W):\n        self.W = W\n        self.below = [0] * (W + 1)\n        self.above = [0] * (W + 1)\n        self.left = [0] * (W + 1)\n        self.right = [0] * (W + 1)\n        self.pos = {}\n\n    def addBlock(self, x, y):\n        self.pos[(x, y)] = True\n        self.above[x] = y\n        self.below[x] = y - 1\n        self.left[x] = x - 1\n        self.right[x] = x + 1\n\n    def moveBlocks(self):\n        toRemove = []\n        for x in sorted(self.pos):\n            y = self.above[x]\n            if y == 1:\n                toRemove.append(x)\n                continue\n            ny = y - 1\n            if self.above[self.left[x]] == ny or self.above[self.right[x]] == ny:\n                continue\n            self.above[x] = ny\n            self.below[x] = ny - 1\n            self.above[self.left[x]] = ny\n            self.below[self.right[x]] = ny\n        for x in toRemove:\n            del self.pos[(x, self.above[x])]\n\n    def exists(self, x, y):\n        return (x, y) in self.pos\n\ndef main():\n    import sys\n    input = sys.stdin.read\n    data = input().split()\n    \n    N = int(data[0])\n    W = int(data[1])\n    grid = Grid(W)\n    \n    index = 2\n    for _ in range(N):\n        x = int(data[index])\n        y = int(data[index + 1])\n        grid.addBlock(x, y)\n        index += 2\n    \n    Q = int(data[index])\n    results = []\n    \n    for _ in range(Q):\n        T = int(data[index + 1])\n        A = int(data[index + 2])\n        index += 3"
+      ]
+    },
+    {
+      "id": "abc392_c",
+      "difficulty": "medium",
+      "greedy": false,
+      "passk": false,
+      "n_solve": 0,
+      "K": 12,
+      "correct": [],
+      "incorrect": [
+        "# Read input from standard input\nimport sys\ninput = sys.stdin.read\ndata = input().split()\n\n# Number of people\nN = int(data[0])\n\n# Parse the staring directions\nP = list(map(int, data[1:N+1]))\n\n# Parse the bib numbers\nQ = list(map(int, data[N+1:]))\n\n# Create a dictionary to map each person to their staring direction\nstaring directions = {i: P[i-1] for i in range(1, N+1)}\n\n# Create a list to store the result\nresult = []\n\n# For each person, find the number on the bib of the person they are staring at\nfor i in range(1, N+1):\n    result.append(Q[staring_directions[i]-1])\n\n# Print the result\nprint(\" \".join(map(str, result)))",
+        "# Read input from standard input\nN = int(input())\nP = list(map(int, input().split()))\nQ = list(map(int, input().split()))\n\n# Initialize a list to store the result\nresult = [0] * N\n\n# Iterate through each person and find the number on the bib of the person they are staring at\nfor i in range(N):\n    result[i] = Q[P[i] - 1]\n\n# Print the result separated by a single space\nprint(' '.join(map(str, result)))",
+        "N = int(input())\nP = list(map(int, input().split()))\nQ = list(map(int, input().split()))\n\nresult = [0] * N\nfor i in range(N):\n    result[i] = Q[P[i] - 1]\n\nprint(\" \".join(map(str, result)))",
+        "# Read input from standard input\nimport sys\ninput = sys.stdin.read\ndata = input().split()\n\n# Parse the input\nN = int(data[0])\nP = list(map(int, data[1:N+1]))\nQ = list(map(int, data[N+1:2*N+1]))\n\n# Create a mapping from bib numbers to people\nbib_to_person = {Q[i-1]: i for i in range(1, N+1)}\n\n# Determine the visible bib numbers for each person\nS = [bib_to_person[P[i-1]] for i in range(1, N+1)]\n\n# Print the results\nprint(' '.join(map(str, S)))"
+      ]
+    }
+  ]
+}

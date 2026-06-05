@@ -1,0 +1,16 @@
+{
+  "alpha": 12.0,
+  "temp": 0.8,
+  "n_test": 6,
+  "n_samp": 4,
+  "escape_rate": {
+    "no_steer": 0.0,
+    "steer": 0.0,
+    "random": 0.0
+  },
+  "escape_examples": {
+    "no_steer": [],
+    "steer": [],
+    "random": []
+  }
+}

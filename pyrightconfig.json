@@ -1,0 +1,7 @@
+{
+  "extraPaths": ["src"],
+  "include": ["src", "scripts", "tests"],
+  "exclude": ["**/__pycache__", ".venv", "data", "models", "results"],
+  "reportMissingImports": "warning",
+  "pythonVersion": "3.13"
+}

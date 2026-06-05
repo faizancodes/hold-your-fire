@@ -1,0 +1,21 @@
+{
+  "alpha": 20.0,
+  "dir": "STUCK",
+  "layer": 8,
+  "sign": -1,
+  "n_test": 12,
+  "loop_escape_rate": {
+    "no_steer": 0.0,
+    "steer": 0.0,
+    "random": 0.0
+  },
+  "coherence_rate": {
+    "no_steer": 1.0,
+    "steer": 1.0,
+    "random": 1.0
+  },
+  "disruption_rate_on_healthy": {
+    "steer": 1.0,
+    "random": 0.8333333333333334
+  }
+}

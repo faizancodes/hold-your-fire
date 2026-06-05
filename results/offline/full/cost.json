@@ -1,0 +1,34 @@
+{
+  "hardware": "Apple M4 MacBook (10 cores, 32 GB RAM), CPU-only (sklearn HistGradientBoosting)",
+  "model": "hist_gradient_boosting",
+  "model_size_on_disk_mb": 1.14,
+  "rss_baseline_libs_mb": 104.2,
+  "model_resident_mb": 76.9,
+  "rss_serving_mb": 205.9,
+  "peak_rss_mb": 1009.3,
+  "peak_rss_note": "peak includes loading the 25,166-row eval parquet for throughput; NOT a deployment cost",
+  "n_prefixes_timed": 300,
+  "assess_end_to_end_ms": {
+    "median": 8.581,
+    "p10": 7.381,
+    "p90": 14.527
+  },
+  "feature_extraction_ms": {
+    "median": 0.136,
+    "p10": 0.074,
+    "p90": 0.233
+  },
+  "raw_numpy_predict_ms": {
+    "median": 6.634,
+    "p10": 5.232,
+    "p90": 13.243
+  },
+  "amortized_model_latency_ms": 0.0025,
+  "batch_throughput_prefixes_per_s": 394795.0,
+  "full_test_set_scoring_s_median": 0.06,
+  "n_test_prefixes": 25166,
+  "judge_latency_s_per_prefix": 11.6,
+  "judge_model_weights_gb": 4.7,
+  "speedup_vs_judge_realpath": 1352,
+  "memory_ratio_vs_judge": 61
+}

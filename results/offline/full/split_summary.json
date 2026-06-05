@@ -1,0 +1,12 @@
+{
+  "group_col": "instance_id",
+  "n_train_rows": 81070,
+  "n_val_rows": 20856,
+  "n_test_rows": 25166,
+  "n_train_groups": 2297,
+  "n_val_groups": 575,
+  "n_test_groups": 719,
+  "fail_rate_train": 0.5733,
+  "fail_rate_val": 0.5755,
+  "fail_rate_test": 0.5687
+}

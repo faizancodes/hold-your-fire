@@ -1,0 +1,69 @@
+{
+  "repo": "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit",
+  "N": 14,
+  "K": 8,
+  "n_usable": 8,
+  "verify_auc": 0.780295566502463,
+  "random_pass1": 0.546875,
+  "self_consistency": 0.875,
+  "verification": 0.625,
+  "oracle": 1.0,
+  "rows": [
+    {
+      "id": "abc387_b",
+      "pass1": 0.25,
+      "verification": 1,
+      "self_consist": 1,
+      "passk": 1.0
+    },
+    {
+      "id": "abc388_b",
+      "pass1": 0.875,
+      "verification": 1,
+      "self_consist": 1,
+      "passk": 1.0
+    },
+    {
+      "id": "abc389_b",
+      "pass1": 0.375,
+      "verification": 0,
+      "self_consist": 0,
+      "passk": 1.0
+    },
+    {
+      "id": "abc390_a",
+      "pass1": 0.5,
+      "verification": 1,
+      "self_consist": 1,
+      "passk": 1.0
+    },
+    {
+      "id": "abc390_b",
+      "pass1": 0.875,
+      "verification": 1,
+      "self_consist": 1,
+      "passk": 1.0
+    },
+    {
+      "id": "abc392_b",
+      "pass1": 0.75,
+      "verification": 0,
+      "self_consist": 1,
+      "passk": 1.0
+    },
+    {
+      "id": "abc393_a",
+      "pass1": 0.25,
+      "verification": 0,
+      "self_consist": 1,
+      "passk": 1.0
+    },
+    {
+      "id": "abc393_b",
+      "pass1": 0.5,
+      "verification": 1,
+      "self_consist": 1,
+      "passk": 1.0
+    }
+  ]
+}

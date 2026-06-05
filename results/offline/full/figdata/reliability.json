@@ -1,0 +1,127 @@
+{
+  "raw": [
+    {
+      "bin": 0,
+      "mean_predicted": 0.07504113973658331,
+      "observed_freq": 0.9166666666666666,
+      "count": 12
+    },
+    {
+      "bin": 1,
+      "mean_predicted": 0.16778838765951157,
+      "observed_freq": 0.19507186858316222,
+      "count": 487
+    },
+    {
+      "bin": 2,
+      "mean_predicted": 0.2518346711660621,
+      "observed_freq": 0.26991565135895035,
+      "count": 1067
+    },
+    {
+      "bin": 3,
+      "mean_predicted": 0.36097691719071173,
+      "observed_freq": 0.3578917540379711,
+      "count": 3529
+    },
+    {
+      "bin": 4,
+      "mean_predicted": 0.4486241448980342,
+      "observed_freq": 0.4591366660979355,
+      "count": 5861
+    },
+    {
+      "bin": 5,
+      "mean_predicted": 0.547303157887478,
+      "observed_freq": 0.5581110839246392,
+      "count": 4087
+    },
+    {
+      "bin": 6,
+      "mean_predicted": 0.644736869328305,
+      "observed_freq": 0.625877326823314,
+      "count": 3277
+    },
+    {
+      "bin": 7,
+      "mean_predicted": 0.7459088246015839,
+      "observed_freq": 0.675,
+      "count": 1960
+    },
+    {
+      "bin": 8,
+      "mean_predicted": 0.8505886450718734,
+      "observed_freq": 0.7655127367733507,
+      "count": 1531
+    },
+    {
+      "bin": 9,
+      "mean_predicted": 0.9704169894206668,
+      "observed_freq": 0.9350223546944858,
+      "count": 3355
+    }
+  ],
+  "calibrated": [
+    {
+      "bin": 0,
+      "mean_predicted": 0.004750087112132543,
+      "observed_freq": 1.0,
+      "count": 4
+    },
+    {
+      "bin": 1,
+      "mean_predicted": 0.19424667539688814,
+      "observed_freq": 0.20683760683760682,
+      "count": 585
+    },
+    {
+      "bin": 2,
+      "mean_predicted": 0.2566115403435517,
+      "observed_freq": 0.2620689655172414,
+      "count": 580
+    },
+    {
+      "bin": 3,
+      "mean_predicted": 0.35357525240500054,
+      "observed_freq": 0.34567544113393117,
+      "count": 3457
+    },
+    {
+      "bin": 4,
+      "mean_predicted": 0.4551909776323575,
+      "observed_freq": 0.462033462033462,
+      "count": 6993
+    },
+    {
+      "bin": 5,
+      "mean_predicted": 0.544392232044941,
+      "observed_freq": 0.5748048568950563,
+      "count": 4612
+    },
+    {
+      "bin": 6,
+      "mean_predicted": 0.6495293675277727,
+      "observed_freq": 0.6449686473574201,
+      "count": 3349
+    },
+    {
+      "bin": 7,
+      "mean_predicted": 0.7589352955719375,
+      "observed_freq": 0.7525730753396459,
+      "count": 2429
+    },
+    {
+      "bin": 8,
+      "mean_predicted": 0.8767486131426454,
+      "observed_freq": 0.8929824561403509,
+      "count": 1140
+    },
+    {
+      "bin": 9,
+      "mean_predicted": 0.9682347769373042,
+      "observed_freq": 0.9677739216658403,
+      "count": 2017
+    }
+  ],
+  "model": "hist_gradient_boosting"
+}

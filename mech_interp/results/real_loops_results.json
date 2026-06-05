@@ -1,0 +1,14 @@
+{
+  "alpha": 12.0,
+  "n_loops": 24,
+  "n_onpolicy": 10,
+  "real_repeat_pref_mean": 2.3278126736235185,
+  "real_repeat_pref_frac_pos": 1.0,
+  "real_steering_delta_pref": 0.18768462911433562,
+  "on_policy_escape": {
+    "no_steer": 0.0,
+    "steer": 0.0,
+    "random": 0.0
+  },
+  "proj_stuck_mean": 2.3597085575262704
+}

@@ -1,0 +1,28 @@
+{
+  "interventions": {
+    "none": {
+      "efficacy_escape": 0.0,
+      "disruption_prodrepeat": 0.0
+    },
+    "gated_targeted": {
+      "efficacy_escape": 1.0,
+      "disruption_prodrepeat": 0.0
+    },
+    "alwayson_targeted": {
+      "efficacy_escape": 1.0,
+      "disruption_prodrepeat": 0.0
+    },
+    "alwayson_rep_pen": {
+      "efficacy_escape": 0.0,
+      "disruption_prodrepeat": 0.9166666666666666
+    },
+    "alwayson_norepeat3": {
+      "efficacy_escape": 0.0,
+      "disruption_prodrepeat": 0.5
+    },
+    "steering": {
+      "efficacy_escape": 0.0,
+      "disruption_prodrepeat": 0.9166666666666666
+    }
+  }
+}

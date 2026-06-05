@@ -1,0 +1,5 @@
+{
+  "model": "logistic_regression",
+  "shuffled_label_val_auc": 0.522349014764457,
+  "interpretation": "AUC near 0.5 => no leakage via features"
+}

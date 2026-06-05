@@ -1,0 +1,2793 @@
+{
+  "behaviorally_identical": true,
+  "per_task": [
+    {
+      "task": "dedup_order",
+      "same_n_steps": true,
+      "same_success": true,
+      "baseline_steps": 40,
+      "shadow_steps": 40
+    },
+    {
+      "task": "off_by_one",
+      "same_n_steps": true,
+      "same_success": true,
+      "baseline_steps": 40,
+      "shadow_steps": 40
+    },
+    {
+      "task": "strip_prefix",
+      "same_n_steps": true,
+      "same_success": true,
+      "baseline_steps": 40,
+      "shadow_steps": 40
+    }
+  ],
+  "baseline": [
+    {
+      "instance_id": "off_by_one",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "baseline",
+      "mode": "baseline",
+      "success": true,
+      "n_steps": 40,
+      "n_interventions": 0,
+      "first_alarm_step": null,
+      "exit_status": "LimitsExceeded",
+      "diff_files_changed": 1,
+      "diff_lines_added": 1,
+      "diff_lines_deleted": 1,
+      "n_test_runs": 37,
+      "total_tokens_approx": 2484,
+      "runtime_s": 148.1,
+      "trajectory_path": "/tmp/claude-501/lg_online_baseline_l_xyrnbq/off_by_one__baseline.traj.json",
+      "verdicts": [],
+      "injected": []
+    },
+    {
+      "instance_id": "strip_prefix",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "baseline",
+      "mode": "baseline",
+      "success": false,
+      "n_steps": 40,
+      "n_interventions": 0,
+      "first_alarm_step": null,
+      "exit_status": "LimitsExceeded",
+      "diff_files_changed": 1,
+      "diff_lines_added": 19,
+      "diff_lines_deleted": 0,
+      "n_test_runs": 19,
+      "total_tokens_approx": 6328,
+      "runtime_s": 236.2,
+      "trajectory_path": "/tmp/claude-501/lg_online_baseline_l_xyrnbq/strip_prefix__baseline.traj.json",
+      "verdicts": [],
+      "injected": []
+    },
+    {
+      "instance_id": "dedup_order",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "baseline",
+      "mode": "baseline",
+      "success": false,
+      "n_steps": 40,
+      "n_interventions": 0,
+      "first_alarm_step": null,
+      "exit_status": "LimitsExceeded",
+      "diff_files_changed": 1,
+      "diff_lines_added": 38,
+      "diff_lines_deleted": 1,
+      "n_test_runs": 1,
+      "total_tokens_approx": 7691,
+      "runtime_s": 250.8,
+      "trajectory_path": "/tmp/claude-501/lg_online_baseline_l_xyrnbq/dedup_order__baseline.traj.json",
+      "verdicts": [],
+      "injected": []
+    }
+  ],
+  "shadow": [
+    {
+      "instance_id": "off_by_one",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "online_shadow",
+      "mode": "shadow",
+      "success": true,
+      "n_steps": 40,
+      "n_interventions": 0,
+      "first_alarm_step": null,
+      "exit_status": "LimitsExceeded",
+      "diff_files_changed": 0,
+      "diff_lines_added": 0,
+      "diff_lines_deleted": 0,
+      "n_test_runs": 13,
+      "total_tokens_approx": 5548,
+      "runtime_s": 263.0,
+      "trajectory_path": "/tmp/claude-501/lg_online_online_shadow_4bfk_cbz/off_by_one__online_shadow.traj.json",
+      "verdicts": [
+        {
+          "step": 1,
+          "risk_score": 0.49587537838256507,
+          "calibrated_risk": 0.48202137998056366,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.48202137998056366
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 2,
+          "risk_score": 0.5185560017243434,
+          "calibrated_risk": 0.5024154589371982,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5024154589371982
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 3,
+          "risk_score": 0.5614997890131931,
+          "calibrated_risk": 0.5458715596330272,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "no trigger at required risk level",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5458715596330272
+            },
+            "n_edit": 1,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 4,
+          "risk_score": 0.7457986289889156,
+          "calibrated_risk": 0.6942675159235668,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "no trigger at required risk level",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.6942675159235668
+            },
+            "n_edit": 1,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 5,
+          "risk_score": 0.8443396576230225,
+          "calibrated_risk": 0.7404255319148936,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "no trigger at required risk level",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7404255319148936
+            },
+            "n_edit": 1,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 6,
+          "risk_score": 0.8931198098011686,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "no trigger at required risk level",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 2,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 7,
+          "risk_score": 0.8576421792697999,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 2,
+            "n_test_runs": 2,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 8,
+          "risk_score": 0.8876698991010149,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 2,
+            "n_test_runs": 2,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 9,
+          "risk_score": 0.8854470501934237,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 3,
+            "n_test_runs": 2,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 10,
+          "risk_score": 0.8917160588091275,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 3,
+            "n_test_runs": 3,
+            "max_command_repeat_count": 3,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 11,
+          "risk_score": 0.8864728742906325,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 3,
+            "n_test_runs": 3,
+            "max_command_repeat_count": 3,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 12,
+          "risk_score": 0.8685601011234446,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 4,
+            "n_test_runs": 3,
+            "max_command_repeat_count": 3,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 13,
+          "risk_score": 0.8832066303968259,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 4,
+            "n_test_runs": 4,
+            "max_command_repeat_count": 4,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 14,
+          "risk_score": 0.8820465249031753,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 4,
+            "n_test_runs": 4,
+            "max_command_repeat_count": 4,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 15,
+          "risk_score": 0.8876583090840516,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 5,
+            "n_test_runs": 4,
+            "max_command_repeat_count": 4,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 16,
+          "risk_score": 0.9146897507946182,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 5,
+            "n_test_runs": 5,
+            "max_command_repeat_count": 5,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 17,
+          "risk_score": 0.9183761667607402,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 5,
+            "n_test_runs": 5,
+            "max_command_repeat_count": 5,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 18,
+          "risk_score": 0.9293273703246904,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 6,
+            "n_test_runs": 5,
+            "max_command_repeat_count": 5,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 19,
+          "risk_score": 0.9356686489938135,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 6,
+            "n_test_runs": 6,
+            "max_command_repeat_count": 6,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 20,
+          "risk_score": 0.8805758771891382,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 6,
+            "n_test_runs": 6,
+            "max_command_repeat_count": 6,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 21,
+          "risk_score": 0.8736594787606766,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 7,
+            "n_test_runs": 6,
+            "max_command_repeat_count": 6,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 22,
+          "risk_score": 0.868258188209878,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 7,
+            "n_test_runs": 7,
+            "max_command_repeat_count": 7,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 23,
+          "risk_score": 0.8751755302147803,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 7,
+            "n_test_runs": 7,
+            "max_command_repeat_count": 7,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 24,
+          "risk_score": 0.8897397248868065,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 8,
+            "n_test_runs": 7,
+            "max_command_repeat_count": 7,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 25,
+          "risk_score": 0.9038904461284321,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 8,
+            "n_test_runs": 8,
+            "max_command_repeat_count": 8,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 26,
+          "risk_score": 0.9109470496915457,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 8,
+            "n_test_runs": 8,
+            "max_command_repeat_count": 8,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 27,
+          "risk_score": 0.9247522927913133,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 9,
+            "n_test_runs": 8,
+            "max_command_repeat_count": 8,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 28,
+          "risk_score": 0.9233673035277882,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 9,
+            "n_test_runs": 9,
+            "max_command_repeat_count": 9,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 29,
+          "risk_score": 0.9282562188480599,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 9,
+            "n_test_runs": 9,
+            "max_command_repeat_count": 9,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 30,
+          "risk_score": 0.9261563827771929,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 10,
+            "n_test_runs": 9,
+            "max_command_repeat_count": 9,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 31,
+          "risk_score": 0.9288300379030874,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 10,
+            "n_test_runs": 10,
+            "max_command_repeat_count": 10,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 32,
+          "risk_score": 0.9288300379030874,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 10,
+            "n_test_runs": 10,
+            "max_command_repeat_count": 10,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 33,
+          "risk_score": 0.9536912635441833,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 11,
+            "n_test_runs": 10,
+            "max_command_repeat_count": 10,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 34,
+          "risk_score": 0.9707564135913004,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 11,
+            "n_test_runs": 11,
+            "max_command_repeat_count": 11,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 35,
+          "risk_score": 0.9785374011928698,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 11,
+            "n_test_runs": 11,
+            "max_command_repeat_count": 11,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 36,
+          "risk_score": 0.9830483433250964,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 12,
+            "n_test_runs": 11,
+            "max_command_repeat_count": 11,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 37,
+          "risk_score": 0.9757558854657017,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 12,
+            "n_test_runs": 12,
+            "max_command_repeat_count": 12,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 38,
+          "risk_score": 0.9750056412220345,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 12,
+            "n_test_runs": 12,
+            "max_command_repeat_count": 12,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 39,
+          "risk_score": 0.9770078315830864,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 13,
+            "n_test_runs": 12,
+            "max_command_repeat_count": 12,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 40,
+          "risk_score": 0.9832553452978815,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 13,
+            "n_test_runs": 13,
+            "max_command_repeat_count": 13,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        }
+      ],
+      "injected": []
+    },
+    {
+      "instance_id": "strip_prefix",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "online_shadow",
+      "mode": "shadow",
+      "success": false,
+      "n_steps": 40,
+      "n_interventions": 0,
+      "first_alarm_step": null,
+      "exit_status": "LimitsExceeded",
+      "diff_files_changed": 0,
+      "diff_lines_added": 0,
+      "diff_lines_deleted": 0,
+      "n_test_runs": 19,
+      "total_tokens_approx": 7847,
+      "runtime_s": 257.8,
+      "trajectory_path": "/tmp/claude-501/lg_online_online_shadow_4bfk_cbz/strip_prefix__online_shadow.traj.json",
+      "verdicts": [
+        {
+          "step": 1,
+          "risk_score": 0.49587537838256507,
+          "calibrated_risk": 0.48202137998056366,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.48202137998056366
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 2,
+          "risk_score": 0.5566497372553183,
+          "calibrated_risk": 0.5458715596330272,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5458715596330272
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 3,
+          "risk_score": 0.592045975833632,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "no trigger at required risk level",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 1,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 4,
+          "risk_score": 0.5666783863158827,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "no trigger at required risk level",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 1,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 5,
+          "risk_score": 0.7502270634337412,
+          "calibrated_risk": 0.6942675159235668,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "no trigger at required risk level",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.6942675159235668
+            },
+            "n_edit": 2,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 6,
+          "risk_score": 0.6514062232040104,
+          "calibrated_risk": 0.6053540587219344,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.6053540587219344
+            },
+            "n_edit": 2,
+            "n_test_runs": 2,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 7,
+          "risk_score": 0.6980900224150206,
+          "calibrated_risk": 0.6824644549763034,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.6824644549763034
+            },
+            "n_edit": 3,
+            "n_test_runs": 2,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 8,
+          "risk_score": 0.6920303149180662,
+          "calibrated_risk": 0.6824644549763034,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.6824644549763034
+            },
+            "n_edit": 3,
+            "n_test_runs": 3,
+            "max_command_repeat_count": 3,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 9,
+          "risk_score": 0.5311218144207148,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 4,
+            "n_test_runs": 3,
+            "max_command_repeat_count": 3,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 10,
+          "risk_score": 0.5100299755521084,
+          "calibrated_risk": 0.4979423868312756,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.4979423868312756
+            },
+            "n_edit": 4,
+            "n_test_runs": 4,
+            "max_command_repeat_count": 4,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 11,
+          "risk_score": 0.5787826013886639,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 5,
+            "n_test_runs": 4,
+            "max_command_repeat_count": 4,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 12,
+          "risk_score": 0.6209118843026915,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 5,
+            "n_test_runs": 5,
+            "max_command_repeat_count": 5,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 13,
+          "risk_score": 0.6752170591698109,
+          "calibrated_risk": 0.6218905472636818,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.6218905472636818
+            },
+            "n_edit": 6,
+            "n_test_runs": 5,
+            "max_command_repeat_count": 5,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 14,
+          "risk_score": 0.6048288228243133,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 6,
+            "n_test_runs": 6,
+            "max_command_repeat_count": 6,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 15,
+          "risk_score": 0.549398364541289,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 7,
+            "n_test_runs": 6,
+            "max_command_repeat_count": 6,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 16,
+          "risk_score": 0.5374734367822208,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 7,
+            "n_test_runs": 7,
+            "max_command_repeat_count": 7,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 17,
+          "risk_score": 0.540593304932974,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 8,
+            "n_test_runs": 7,
+            "max_command_repeat_count": 7,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 18,
+          "risk_score": 0.5064403917880921,
+          "calibrated_risk": 0.48826291079812206,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.48826291079812206
+            },
+            "n_edit": 8,
+            "n_test_runs": 8,
+            "max_command_repeat_count": 8,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 19,
+          "risk_score": 0.518615472992407,
+          "calibrated_risk": 0.5024154589371982,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.5024154589371982
+            },
+            "n_edit": 9,
+            "n_test_runs": 8,
+            "max_command_repeat_count": 8,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 20,
+          "risk_score": 0.4605875916371189,
+          "calibrated_risk": 0.46950819672131155,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.46950819672131155
+            },
+            "n_edit": 9,
+            "n_test_runs": 9,
+            "max_command_repeat_count": 9,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 21,
+          "risk_score": 0.4654259205942185,
+          "calibrated_risk": 0.46950819672131155,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.46950819672131155
+            },
+            "n_edit": 10,
+            "n_test_runs": 9,
+            "max_command_repeat_count": 9,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 22,
+          "risk_score": 0.46162143419251694,
+          "calibrated_risk": 0.46950819672131155,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.46950819672131155
+            },
+            "n_edit": 10,
+            "n_test_runs": 10,
+            "max_command_repeat_count": 10,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 23,
+          "risk_score": 0.473586604536818,
+          "calibrated_risk": 0.47577092511013214,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.47577092511013214
+            },
+            "n_edit": 11,
+            "n_test_runs": 10,
+            "max_command_repeat_count": 10,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 24,
+          "risk_score": 0.59278467492769,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 11,
+            "n_test_runs": 11,
+            "max_command_repeat_count": 11,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 25,
+          "risk_score": 0.6027742550586221,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 12,
+            "n_test_runs": 11,
+            "max_command_repeat_count": 11,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 26,
+          "risk_score": 0.5736816962010227,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 12,
+            "n_test_runs": 12,
+            "max_command_repeat_count": 12,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 27,
+          "risk_score": 0.572370588744926,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 13,
+            "n_test_runs": 12,
+            "max_command_repeat_count": 12,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 28,
+          "risk_score": 0.5588250020429824,
+          "calibrated_risk": 0.5458715596330272,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5458715596330272
+            },
+            "n_edit": 13,
+            "n_test_runs": 13,
+            "max_command_repeat_count": 13,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 29,
+          "risk_score": 0.6066576766142877,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 14,
+            "n_test_runs": 13,
+            "max_command_repeat_count": 13,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 30,
+          "risk_score": 0.6043798282731311,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 14,
+            "n_test_runs": 14,
+            "max_command_repeat_count": 14,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 31,
+          "risk_score": 0.6479310411115553,
+          "calibrated_risk": 0.6053540587219344,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.6053540587219344
+            },
+            "n_edit": 15,
+            "n_test_runs": 14,
+            "max_command_repeat_count": 14,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 32,
+          "risk_score": 0.6368902967030844,
+          "calibrated_risk": 0.6053540587219344,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.6053540587219344
+            },
+            "n_edit": 15,
+            "n_test_runs": 15,
+            "max_command_repeat_count": 15,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 33,
+          "risk_score": 0.6291272923019999,
+          "calibrated_risk": 0.5833333333333334,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.5833333333333334
+            },
+            "n_edit": 16,
+            "n_test_runs": 15,
+            "max_command_repeat_count": 15,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 34,
+          "risk_score": 0.6178446670032415,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 16,
+            "n_test_runs": 16,
+            "max_command_repeat_count": 16,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 35,
+          "risk_score": 0.6291272923019999,
+          "calibrated_risk": 0.5833333333333334,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.5833333333333334
+            },
+            "n_edit": 17,
+            "n_test_runs": 16,
+            "max_command_repeat_count": 16,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 36,
+          "risk_score": 0.6178446670032415,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 17,
+            "n_test_runs": 17,
+            "max_command_repeat_count": 17,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 37,
+          "risk_score": 0.5970283766654677,
+          "calibrated_risk": 0.5787878787878786,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.5787878787878786
+            },
+            "n_edit": 18,
+            "n_test_runs": 17,
+            "max_command_repeat_count": 17,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 38,
+          "risk_score": 0.5487073624012414,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 18,
+            "n_test_runs": 18,
+            "max_command_repeat_count": 18,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 39,
+          "risk_score": 0.4956737949601361,
+          "calibrated_risk": 0.48202137998056366,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.48202137998056366
+            },
+            "n_edit": 19,
+            "n_test_runs": 18,
+            "max_command_repeat_count": 18,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 40,
+          "risk_score": 0.562274709929045,
+          "calibrated_risk": 0.5458715596330272,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5458715596330272
+            },
+            "n_edit": 19,
+            "n_test_runs": 19,
+            "max_command_repeat_count": 19,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        }
+      ],
+      "injected": []
+    },
+    {
+      "instance_id": "dedup_order",
+      "model": "ollama_chat/qwen2.5-coder:7b",
+      "policy": "online_shadow",
+      "mode": "shadow",
+      "success": false,
+      "n_steps": 40,
+      "n_interventions": 0,
+      "first_alarm_step": null,
+      "exit_status": "LimitsExceeded",
+      "diff_files_changed": 0,
+      "diff_lines_added": 0,
+      "diff_lines_deleted": 0,
+      "n_test_runs": 1,
+      "total_tokens_approx": 7694,
+      "runtime_s": 303.4,
+      "trajectory_path": "/tmp/claude-501/lg_online_online_shadow_4bfk_cbz/dedup_order__online_shadow.traj.json",
+      "verdicts": [
+        {
+          "step": 1,
+          "risk_score": 0.49587537838256507,
+          "calibrated_risk": 0.48202137998056366,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.48202137998056366
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 2,
+          "risk_score": 0.5277991087587122,
+          "calibrated_risk": 0.5078475336322871,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "below policy threshold",
+          "evidence": {
+            "would_alarm": false,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5078475336322871
+            },
+            "n_edit": 0,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 3,
+          "risk_score": 0.5697080391157152,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "no trigger at required risk level",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 1,
+            "n_test_runs": 0,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 4,
+          "risk_score": 0.5788482835271239,
+          "calibrated_risk": 0.5511221945137157,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "no trigger at required risk level",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.5511221945137157
+            },
+            "n_edit": 1,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 5,
+          "risk_score": 0.7564952600054083,
+          "calibrated_risk": 0.6942675159235668,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "no trigger at required risk level",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": true,
+              "risk": 0.6942675159235668
+            },
+            "n_edit": 2,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 6,
+          "risk_score": 0.876458724276755,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "none",
+          "reason": "no trigger at required risk level",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": false,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 3,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 1,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 7,
+          "risk_score": 0.7471633856385449,
+          "calibrated_risk": 0.6942675159235668,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.6942675159235668
+            },
+            "n_edit": 4,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 2,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 8,
+          "risk_score": 0.7726077594175452,
+          "calibrated_risk": 0.7404255319148936,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7404255319148936
+            },
+            "n_edit": 5,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 3,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 9,
+          "risk_score": 0.8633674498305955,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 6,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 4,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 10,
+          "risk_score": 0.9026216767253087,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 7,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 5,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 11,
+          "risk_score": 0.9130552921483823,
+          "calibrated_risk": 0.7869047619047619,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.7869047619047619
+            },
+            "n_edit": 8,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 6,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 12,
+          "risk_score": 0.9260011429794746,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 9,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 7,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 13,
+          "risk_score": 0.931608901910784,
+          "calibrated_risk": 0.8511904761904762,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8511904761904762
+            },
+            "n_edit": 10,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 8,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 14,
+          "risk_score": 0.9571597228054368,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 11,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 9,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 15,
+          "risk_score": 0.9631533902371904,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 12,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 10,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 16,
+          "risk_score": 0.9777803399579301,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 13,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 11,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 17,
+          "risk_score": 0.9779510096140601,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 14,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 12,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 18,
+          "risk_score": 0.9790302257265457,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 15,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 13,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 19,
+          "risk_score": 0.9794690849913351,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 16,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 14,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 20,
+          "risk_score": 0.9784432370524597,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 17,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 15,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 21,
+          "risk_score": 0.9784432370524597,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 18,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 16,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 22,
+          "risk_score": 0.9784958566059502,
+          "calibrated_risk": 0.9493392070484582,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.9493392070484582
+            },
+            "n_edit": 19,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 17,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 23,
+          "risk_score": 0.9658432286456519,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 20,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 18,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 24,
+          "risk_score": 0.9664537454427797,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 21,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 19,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 25,
+          "risk_score": 0.9691054661377396,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 22,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 20,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 26,
+          "risk_score": 0.9691054661377396,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 23,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 21,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 27,
+          "risk_score": 0.9691054661377396,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 24,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 22,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 28,
+          "risk_score": 0.966679278623495,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 25,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 23,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 29,
+          "risk_score": 0.9691841801012743,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 26,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 24,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 30,
+          "risk_score": 0.9649638877428418,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 27,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 25,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 31,
+          "risk_score": 0.9649638877428418,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 28,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 26,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 32,
+          "risk_score": 0.9649638877428418,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 29,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 27,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 33,
+          "risk_score": 0.9656279807977172,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 30,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 28,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 34,
+          "risk_score": 0.9656279807977172,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 31,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 29,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 35,
+          "risk_score": 0.9656279807977172,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 32,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 30,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 36,
+          "risk_score": 0.9656279807977172,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 33,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 31,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 37,
+          "risk_score": 0.9656279807977172,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 34,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 32,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 38,
+          "risk_score": 0.9618614531021914,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 35,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 33,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 39,
+          "risk_score": 0.9605683514437738,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 36,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 34,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        },
+        {
+          "step": 40,
+          "risk_score": 0.9695474786917282,
+          "calibrated_risk": 0.8952569169960475,
+          "alarm": false,
+          "recommended_intervention": "loop_guard",
+          "reason": "high risk + repeated actions / loop",
+          "evidence": {
+            "would_alarm": true,
+            "triggers": {
+              "loop": true,
+              "evidence_gate": false,
+              "rollback": false,
+              "risk": 0.8952569169960475
+            },
+            "n_edit": 37,
+            "n_test_runs": 1,
+            "max_command_repeat_count": 35,
+            "edited_before_any_read": 0,
+            "tests_worsening": 0
+          }
+        }
+      ],
+      "injected": []
+    }
+  ]
+}

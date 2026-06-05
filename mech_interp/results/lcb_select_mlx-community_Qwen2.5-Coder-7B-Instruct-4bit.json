@@ -1,0 +1,58 @@
+{
+  "repo": "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit",
+  "L": 20,
+  "K": 16,
+  "rows": [
+    {
+      "id": "abc387_b",
+      "tag": "held-out",
+      "sel_solved": 0,
+      "pass1": 0.3125,
+      "passk": 1,
+      "n_solve": 5
+    },
+    {
+      "id": "abc388_b",
+      "tag": "train",
+      "sel_solved": 1,
+      "pass1": 0.875,
+      "passk": 1,
+      "n_solve": 14
+    },
+    {
+      "id": "abc389_b",
+      "tag": "held-out",
+      "sel_solved": 0,
+      "pass1": 0.3125,
+      "passk": 1,
+      "n_solve": 5
+    },
+    {
+      "id": "abc390_a",
+      "tag": "train",
+      "sel_solved": 1,
+      "pass1": 0.5,
+      "passk": 1,
+      "n_solve": 8
+    },
+    {
+      "id": "abc390_b",
+      "tag": "train",
+      "sel_solved": 1,
+      "pass1": 0.9375,
+      "passk": 1,
+      "n_solve": 15
+    }
+  ],
+  "score_auc": 0.44874274661508706,
+  "all": {
+    "selection": 0.6,
+    "pass1": 0.5875,
+    "passk": 1.0
+  },
+  "held_out": {
+    "selection": 0.0,
+    "pass1": 0.3125,
+    "passk": 1.0
+  }
+}

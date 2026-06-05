@@ -1,0 +1,5 @@
+threshold_policy,threshold,success_false_alarm_rate,failed_alert_rate,median_lead_steps
+T1_max_f1,0.3755,0.9863,0.9993,18.0
+T2_success_far_lte_20pct,0.7031,0.17,0.5578,14.0
+T3_success_far_lte_10pct,0.7778,0.0901,0.4373,13.0
+T4_success_far_lte_5pct,0.8514,0.0218,0.2743,11.0

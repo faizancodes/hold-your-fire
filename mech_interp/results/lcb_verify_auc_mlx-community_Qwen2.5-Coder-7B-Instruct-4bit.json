@@ -1,0 +1,37 @@
+{
+  "repo": "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit",
+  "auc_all": 0.711764705882353,
+  "auc_held": 0.55,
+  "perprob": [
+    {
+      "id": "abc387_b",
+      "greedy": false,
+      "corr_score": 3.8515625,
+      "incorr_score": 3.50390625
+    },
+    {
+      "id": "abc388_b",
+      "greedy": true,
+      "corr_score": 4.49609375,
+      "incorr_score": 4.5703125
+    },
+    {
+      "id": "abc389_b",
+      "greedy": false,
+      "corr_score": 0.5260416666666666,
+      "incorr_score": -0.0625
+    },
+    {
+      "id": "abc390_a",
+      "greedy": true,
+      "corr_score": 3.42578125,
+      "incorr_score": 1.65625
+    },
+    {
+      "id": "abc390_b",
+      "greedy": true,
+      "corr_score": 3.88671875,
+      "incorr_score": -2.625
+    }
+  ]
+}

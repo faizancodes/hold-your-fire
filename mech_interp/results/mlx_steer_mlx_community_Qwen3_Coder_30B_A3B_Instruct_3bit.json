@@ -1,0 +1,57 @@
+{
+  "repo": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-3bit",
+  "n_layers": 48,
+  "d_model": 2048,
+  "best_layer": 32,
+  "baseline_repeat_pref": 11.320152282714844,
+  "alphas": [
+    0,
+    4,
+    8,
+    12,
+    16
+  ],
+  "rows": [
+    {
+      "alpha": 0,
+      "dir": 11.320152282714844,
+      "random": 11.320152282714844,
+      "ortho": 11.320152282714844,
+      "novel_logp": -24.587682723999023
+    },
+    {
+      "alpha": 4,
+      "dir": 9.934507369995117,
+      "random": 11.025455474853516,
+      "ortho": 11.456253051757812,
+      "novel_logp": -24.264162063598633
+    },
+    {
+      "alpha": 8,
+      "dir": 10.466485977172852,
+      "random": 11.649028778076172,
+      "ortho": 11.404155731201172,
+      "novel_logp": -24.509761810302734
+    },
+    {
+      "alpha": 12,
+      "dir": 17.663698196411133,
+      "random": 13.667573928833008,
+      "ortho": 14.796932220458984,
+      "novel_logp": -30.64366340637207
+    },
+    {
+      "alpha": 16,
+      "dir": 27.277677536010742,
+      "random": 15.756637573242188,
+      "ortho": 17.787044525146484,
+      "novel_logp": -44.50354766845703
+    }
+  ],
+  "dir_net_drop": -15.957525253295898,
+  "random_net_drop": -4.436485290527344,
+  "coherent_novel_logp_preserved": false,
+  "decode_greedy": "1\n$ 1\n$ 1\n$ ",
+  "decode_penalized": "1\n$ 1\n$ 1\n$ ",
+  "decode_changed": false
+}

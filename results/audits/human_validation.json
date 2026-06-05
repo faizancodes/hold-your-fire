@@ -1,0 +1,49 @@
+{
+  "n_total": 50,
+  "n_flagged": 40,
+  "n_missed": 10,
+  "exact_agreement_all": 0.3,
+  "exact_agreement_flagged": 0.375,
+  "human_dist_flagged": {
+    "looping": "16 (40%)",
+    "patch_churn": "12 (30%)",
+    "insufficient_context": "5 (12%)",
+    "not_observable": "3 (8%)",
+    "environment_distraction": "2 (5%)",
+    "test_neglect": "1 (2%)",
+    "submission_too_early": "1 (2%)"
+  },
+  "heuristic_dist_flagged": {
+    "looping": "35 (88%)",
+    "insufficient_context": "4 (10%)",
+    "not_observable": "1 (2%)"
+  },
+  "human_dist_missed": {
+    "not_observable": "4 (40%)",
+    "insufficient_context": "3 (30%)",
+    "patch_churn": "2 (20%)",
+    "environment_distraction": "1 (10%)"
+  },
+  "heuristic_dist_missed": {
+    "looping": "6 (60%)",
+    "test_neglect": "2 (20%)",
+    "insufficient_context": "1 (10%)",
+    "patch_churn": "1 (10%)"
+  },
+  "flagged_looping_heuristic": 0.875,
+  "flagged_looping_human": 0.4,
+  "flagged_repetition_family_human": 0.7,
+  "flagged_repetition_family_heuristic": 0.875,
+  "coarse_agreement_all": 0.58,
+  "coarse_agreement_flagged": 0.675,
+  "looping_precision_heuristic": 0.366,
+  "looping_recall_heuristic": 0.938,
+  "heuristic_looping_really": {
+    "looping": "15 (37%)",
+    "patch_churn": "14 (34%)",
+    "insufficient_context": "6 (15%)",
+    "environment_distraction": "3 (7%)",
+    "not_observable": "3 (7%)"
+  },
+  "missed_not_observable_human": 0.7
+}

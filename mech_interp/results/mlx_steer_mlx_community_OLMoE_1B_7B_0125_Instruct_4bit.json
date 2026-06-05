@@ -1,0 +1,57 @@
+{
+  "repo": "mlx-community/OLMoE-1B-7B-0125-Instruct-4bit",
+  "n_layers": 16,
+  "d_model": 2048,
+  "best_layer": 2,
+  "baseline_repeat_pref": 15.3125,
+  "alphas": [
+    0,
+    4,
+    8,
+    12,
+    16
+  ],
+  "rows": [
+    {
+      "alpha": 0,
+      "dir": 15.3125,
+      "random": 15.3125,
+      "ortho": 15.3125,
+      "novel_logp": -28.9375
+    },
+    {
+      "alpha": 4,
+      "dir": 27.5625,
+      "random": 21.125,
+      "ortho": 17.5625,
+      "novel_logp": -86.9375
+    },
+    {
+      "alpha": 8,
+      "dir": 27.0,
+      "random": 27.84375,
+      "ortho": 23.1875,
+      "novel_logp": -87.5
+    },
+    {
+      "alpha": 12,
+      "dir": 26.125,
+      "random": 29.625,
+      "ortho": 25.46875,
+      "novel_logp": -86.125
+    },
+    {
+      "alpha": 16,
+      "dir": 25.4375,
+      "random": 30.375,
+      "ortho": 26.3125,
+      "novel_logp": -85.125
+    }
+  ],
+  "dir_net_drop": -10.125,
+  "random_net_drop": -15.0625,
+  "coherent_novel_logp_preserved": false,
+  "decode_greedy": "\n```\n\nThe `find_file` command is",
+  "decode_penalized": "\n```\n\nThe `$` symbol represents the command",
+  "decode_changed": true
+}

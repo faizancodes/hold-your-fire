@@ -1,0 +1,11 @@
+{
+  "n": 10,
+  "baseline_escape": 0.0,
+  "ablate_heads_escape": 0.0,
+  "logit_penalty_escape": {
+    "4.0": 0.0,
+    "8.0": 1.0
+  },
+  "steer_escape_a16": 0.0,
+  "ablate_heads_disruption_on_healthy": 0.6
+}
